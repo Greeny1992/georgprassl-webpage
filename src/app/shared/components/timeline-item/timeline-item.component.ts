@@ -32,7 +32,10 @@ export interface TimelineItemData {
         <div class="timeline-card-details" *ngIf="item.details">
           {{ item.details }}
         </div>
-        <ul class="timeline-card-highlights" *ngIf="item.highlights && item.highlights.length">
+        <ul
+          class="timeline-card-highlights"
+          *ngIf="item.highlights && item.highlights.length"
+        >
           <li *ngFor="let highlight of item.highlights">{{ highlight }}</li>
         </ul>
       </div>

@@ -1,6 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { NgFor } from '@angular/common';
-import { TimelineItemComponent, TimelineItemData } from '../timeline-item/timeline-item.component';
+import {
+  TimelineItemComponent,
+  TimelineItemData,
+} from '../timeline-item/timeline-item.component';
 import { HorizontalScrollHijackDirective } from '../../directives/horizontal-scroll-hijack.directive';
 
 /**

@@ -12,7 +12,8 @@
 
   &:focus {
     .timeline-card {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 0 0 2px var(--mat-sys-primary, #2563eb);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12),
+        0 0 0 2px var(--mat-sys-primary, #2563eb);
     }
   }
 
@@ -20,7 +21,7 @@
     &:hover .timeline-card {
       transform: translateY(-3px);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12),
-                  0 2px 8px rgba(37, 99, 235, 0.08);
+        0 2px 8px rgba(37, 99, 235, 0.08);
       border-color: var(--mat-sys-primary, rgba(37, 99, 235, 0.3));
     }
   }
@@ -28,16 +29,20 @@
 
 // Dot indicator on center line - with accent gradient
 .timeline-item::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 16px;
   top: 50%;
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--mat-sys-primary, #2563eb) 0%, #1e40af 100%);
+  background: linear-gradient(
+    135deg,
+    var(--mat-sys-primary, #2563eb) 0%,
+    #1e40af 100%
+  );
   box-shadow: 0 0 0 5px var(--mat-sys-surface-container-low, #f8f8f8),
-              0 2px 8px rgba(37, 99, 235, 0.25);
+    0 2px 8px rgba(37, 99, 235, 0.25);
   transform: translateY(-50%);
   z-index: 2;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -46,7 +51,7 @@
 .timeline-item:hover::before {
   transform: translateY(-50%) scale(1.3);
   box-shadow: 0 0 0 6px var(--mat-sys-surface-container-low, #f8f8f8),
-              0 4px 12px rgba(37, 99, 235, 0.35);
+    0 4px 12px rgba(37, 99, 235, 0.35);
 }
 
 // Card container - enhanced with subtle tint and better shadows

@@ -4,7 +4,11 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { ResumeDataService } from '../../core/services/resume-data.service';
-import { ResumeData, EmploymentItem, EducationItem } from '../../core/models/resume.models';
+import {
+  ResumeData,
+  EmploymentItem,
+  EducationItem,
+} from '../../core/models/resume.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { HorizontalTimelineComponent } from '../../shared/components/horizontal-timeline/horizontal-timeline.component';
 import { TimelineItemData } from '../../shared/components/timeline-item/timeline-item.component';
@@ -89,8 +93,18 @@ export class ResumePageComponent implements OnInit {
     const formatMonth = (dateStr: string): string => {
       const [year, month] = dateStr.split('-');
       const monthNames = [
-        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
       ];
       return `${monthNames[parseInt(month, 10) - 1]} ${year}`;
     };

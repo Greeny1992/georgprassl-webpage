@@ -61,9 +61,7 @@ export interface ResumeData {
  */
 export function isValidBasics(obj: any): obj is ResumeBasics {
   return (
-    obj &&
-    typeof obj.name === 'string' &&
-    typeof obj.headline === 'string'
+    obj && typeof obj.name === 'string' && typeof obj.headline === 'string'
   );
 }
 

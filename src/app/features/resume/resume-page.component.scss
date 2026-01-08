@@ -26,7 +26,11 @@
   font-weight: 800;
   letter-spacing: -0.04em;
   margin: 0 0 14px 0;
-  background: linear-gradient(135deg, var(--mat-sys-on-surface, #111) 0%, var(--mat-sys-primary, #2563eb) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--mat-sys-on-surface, #111) 0%,
+    var(--mat-sys-primary, #2563eb) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -117,7 +121,11 @@
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    background: linear-gradient(135deg, var(--mat-sys-primary, #2563eb) 0%, #1e40af 100%);
+    background: linear-gradient(
+      135deg,
+      var(--mat-sys-primary, #2563eb) 0%,
+      #1e40af 100%
+    );
     border-color: var(--mat-sys-primary, #2563eb);
     color: #ffffff;
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
