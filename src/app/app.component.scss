@@ -1,0 +1,28 @@
+.app-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--mat-sys-surface-container);
+  color: var(--mat-sys-on-surface);
+  border-bottom: 1px solid var(--mat-sys-outline-variant);
+}
+
+.app-toolbar a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-title {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.app-name {
+  font-weight: 600;
+}
+
+.app-headline {
+  font-size: 12px;
+  opacity: 0.9;
+}

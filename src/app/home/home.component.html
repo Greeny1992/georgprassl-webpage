@@ -1,1 +1,48 @@
-<p>home works!</p>
+<div class="cv-page" *ngIf="cv$ | async as cv">
+  <mat-card class="cv-card">
+    <div class="hero">
+      <div class="hero-main">
+        <h1 class="name">{{ cv.basics.name }}</h1>
+        <div class="headline">{{ cv.basics.headline }}</div>
+        <div class="location">{{ cv.basics.location }}</div>
+      </div>
+
+      <div class="hero-contact">
+        <a class="contact" href="mailto:{{ cv.basics.email }}">{{
+          cv.basics.email
+        }}</a>
+        <div class="contact">{{ cv.basics.phone }}</div>
+        <ng-container
+          *ngFor="let link of cv.basics.links; trackBy: trackByIndex"
+        >
+          <a
+            class="contact"
+            *ngIf="link.url"
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ link.label }}
+          </a>
+          <span class="contact muted" *ngIf="!link.url">{{ link.label }}</span>
+        </ng-container>
+      </div>
+    </div>
+  </mat-card>
+
+  <div class="cv-grid">
+    <mat-card class="cv-card" id="profile">
+      <h2 class="cv-section-title">Profile</h2>
+      <p class="text">{{ cv.profile }}</p>
+    </mat-card>
+
+    <mat-card class="cv-card">
+      <section class="timeline-section" id="employment">
+        <div class="timeline-header">
+          <h2 class="timeline-title">Employment</h2>
+          <div class="timeline-hint">Scroll to explore</div>
+        </div>
+      </section></mat-card
+    >
+  </div>
+</div>

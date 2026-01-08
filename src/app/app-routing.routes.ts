@@ -1,7 +1,7 @@
 import { Route } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { ResumePageComponent } from './features/resume/resume-page.component';
 
 export const ROUTES: Route[] = [
-  { path: 'home', component: HomeComponent },
-  { path: '**', component: HomeComponent },
+  { path: '', component: ResumePageComponent },
+  { path: '**', redirectTo: '' },
 ];

@@ -1,11 +1,7 @@
 {
   "hosting": {
-    "public": "dist/georgprassl-webpage",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "public": "dist/georgprassl-webpage/browser",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",

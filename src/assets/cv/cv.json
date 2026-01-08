@@ -1,0 +1,152 @@
+{
+  "basics": {
+    "name": "Georg Praßl",
+    "headline": "Full Stack Developer",
+    "location": "Graz, Austria",
+    "phone": "+43 664 39 799 71",
+    "email": "georg.p92@gmx.at",
+    "links": [
+      {
+        "label": "LinkedIn",
+        "url": ""
+      }
+    ]
+  },
+  "profile": "IT expert skilled in programming, project management, and team leadership. Proven success at DCCS GmbH, Rockets Investments, and Magna Steyr.",
+  "skills": [
+    "Innovation",
+    "Coaching",
+    "Agile Software Development",
+    "Sprint Planning",
+    "Problem Solving",
+    "Management",
+    "Agile Project Management",
+    "Java",
+    "Production Systems",
+    ".NET Framework",
+    "Scrum",
+    "SQL",
+    "Project Management",
+    "React Native",
+    "TypeScript",
+    "Angular"
+  ],
+  "languages": [{ "name": "English" }, { "name": "German" }],
+  "employment": [
+    {
+      "title": "Full Stack Developer",
+      "company": "Rockets Investments GmbH",
+      "location": "Graz",
+      "start": "2022-02",
+      "highlights": [
+        "Responsible for front-end of platform (Angular, TypeScript, SCSS, Jest)",
+        "Partly developing in back-end (Java, SQL)",
+        "Re-branding of platform",
+        "Completely new development of front-end and enhancing back-end"
+      ]
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "DCCS GmbH",
+      "location": "Graz",
+      "start": "2019-08",
+      "end": "2022-01",
+      "highlights": [
+        "Full stack developer",
+        "Back-end: .NET Framework",
+        "Front-end: React, React Native, Angular, Dojo Toolkit",
+        "Worked with Scrum methods",
+        "Regularly attending sprint planning, daily stand-ups, story estimating",
+        "Worked on projects from 2–3 months up to 3 years (Austria & Germany)"
+      ]
+    },
+    {
+      "title": "System Administrator & Test Planner",
+      "company": "Magna Steyr",
+      "location": "Graz",
+      "start": "2017-04",
+      "end": "2019-07",
+      "highlights": [
+        "Support and further development of the internal manufacturing management system (MMS)",
+        "Responsible for connecting new production systems to the MMS",
+        "3rd level support",
+        "Training of new employees at the MMS",
+        "Part of planning team to decide and plan new production lines"
+      ]
+    },
+    {
+      "title": "Teamleader",
+      "company": "Magna Steyr",
+      "location": "Graz",
+      "start": "2016-02",
+      "end": "2017-03",
+      "highlights": [
+        "Responsible for 20 employees on the night shift",
+        "Ensuring the quality of the parts produced",
+        "Creation of daily shift reports",
+        "Worked with project managers on cost savings and resource optimization"
+      ]
+    },
+    {
+      "title": "Soldier (KIOP/KPE)",
+      "company": "Austrian Army",
+      "location": "Klagenfurt",
+      "start": "2012-05",
+      "end": "2016-01",
+      "highlights": [
+        "Six months as KFOR soldier in Kosovo",
+        "Worked with international teams"
+      ]
+    },
+    {
+      "title": "Body Shop Technician",
+      "company": "Magna Steyr",
+      "location": "Graz",
+      "start": "2008-09",
+      "highlights": ["Apprenticeship", "Technician in production"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Diplom-Ingenieur",
+      "institution": "FH Joanneum",
+      "location": "Graz",
+      "start": "2021-10",
+      "end": "2023-10",
+      "focus": "Software and Digital Experience Engineering"
+    },
+    {
+      "degree": "Bachelor of Science in Engineering",
+      "institution": "FH Campus 02",
+      "location": "Graz",
+      "start": "2018-10",
+      "end": "2021-07",
+      "focus": "Business Software Development"
+    },
+    {
+      "degree": "A-level certification",
+      "institution": "HTBVA Bulme Graz",
+      "location": "Graz",
+      "start": "2016-09",
+      "end": "2018-09",
+      "focus": "Evening school: German, English, mathematics, mechanical engineering"
+    }
+  ],
+  "courses": [
+    {
+      "name": "Certified IPMA Level D",
+      "provider": "IPMA",
+      "date": "2020-05"
+    },
+    {
+      "name": "ITIL v4 Foundation",
+      "provider": "ITIL",
+      "date": "2021-05"
+    },
+    {
+      "name": "Sicherheitsvertrauensperson",
+      "provider": "AUVA",
+      "date": "2018-03"
+    }
+  ]
+}

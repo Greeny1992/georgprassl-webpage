@@ -1,4 +1,5 @@
 import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
 import { environment } from './environments/environment';
 import { AppComponent } from './app/app.component';
 import { ROUTES } from './app/app-routing.routes';
@@ -14,6 +15,7 @@ bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(BrowserModule),
     provideAnimationsAsync(),
+    provideHttpClient(),
     provideRouter(ROUTES),
   ],
 }).catch((err) => console.error(err));

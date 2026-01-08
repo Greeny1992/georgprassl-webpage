@@ -1,0 +1,96 @@
+<div class="resume-page" *ngIf="resumeData$ | async as resume">
+  <!-- Hero Section -->
+  <section class="hero" role="banner">
+    <h1 class="hero-name">{{ resume.basics.name }}</h1>
+    <p class="hero-headline">{{ resume.basics.headline }}</p>
+    <div class="hero-meta">
+      <span class="hero-location" *ngIf="resume.basics.location">
+        📍 {{ resume.basics.location }}
+      </span>
+      <a
+        *ngFor="let link of resume.basics.links"
+        [href]="link.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hero-link"
+      >
+        {{ link.label }}
+      </a>
+    </div>
+  </section>
+
+  <!-- Profile Summary -->
+  <section class="profile" *ngIf="resume.profile">
+    <app-section-header
+      title="About"
+      subtitle="Professional summary"
+    ></app-section-header>
+    <p class="profile-text">{{ resume.profile }}</p>
+  </section>
+
+  <!-- Education Timeline -->
+  <section class="timeline-section">
+    <app-section-header
+      title="Education"
+      subtitle="Scroll horizontally through my academic journey"
+    ></app-section-header>
+    <app-horizontal-timeline
+      [items]="(educationTimeline$ | async) || []"
+      type="education"
+    ></app-horizontal-timeline>
+  </section>
+
+  <!-- Employment Timeline -->
+  <section class="timeline-section">
+    <app-section-header
+      title="Employment"
+      subtitle="Scroll horizontally through my professional experience"
+    ></app-section-header>
+    <app-horizontal-timeline
+      [items]="(employmentTimeline$ | async) || []"
+      type="employment"
+    ></app-horizontal-timeline>
+  </section>
+
+  <!-- Skills -->
+  <section class="skills" *ngIf="resume.skills && resume.skills.length">
+    <app-section-header
+      title="Skills"
+      subtitle="Technical expertise"
+    ></app-section-header>
+    <div class="skills-grid">
+      <span *ngFor="let skill of resume.skills" class="skill-chip">
+        {{ skill }}
+      </span>
+    </div>
+  </section>
+
+  <!-- Languages -->
+  <section class="languages" *ngIf="resume.languages && resume.languages.length">
+    <app-section-header
+      title="Languages"
+      subtitle="Communication capabilities"
+    ></app-section-header>
+    <div class="languages-list">
+      <div *ngFor="let lang of resume.languages" class="language-item">
+        <span class="language-name">{{ lang.name }}</span>
+        <span class="language-level" *ngIf="lang.level">{{ lang.level }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses -->
+  <section class="courses" *ngIf="resume.courses && resume.courses.length">
+    <app-section-header
+      title="Courses & Certifications"
+      subtitle="Continuous learning"
+    ></app-section-header>
+    <div class="courses-list">
+      <div *ngFor="let course of resume.courses" class="course-item">
+        <div class="course-title">{{ course.name }}</div>
+        <div class="course-provider">{{ course.provider }}</div>
+        <div class="course-date" *ngIf="course.date">{{ course.date }}</div>
+      </div>
+    </div>
+  </section>
+</div>
