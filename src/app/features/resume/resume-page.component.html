@@ -1,136 +1,155 @@
-<div class="resume-page" *ngIf="resumeData$ | async as resume">
-  <!-- Hero Section -->
-  <section class="hero" role="banner">
-    <div class="hero-header">
-      <div class="hero-text">
-        <h1 class="hero-name">{{ resume.basics.name }}</h1>
-        <p class="hero-headline">{{ resume.basics.headline }}</p>
-      </div>
-      <a
-        href="assets/Georg_Hermann_Prassl_-_Senior_IT_&_Software_Professional.pdf"
-        download="Georg_Hermann_Prassl_-_Resume.pdf"
-        class="download-button"
-        aria-label="Download Resume as PDF"
-      >
-        <svg
-          class="download-icon"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-          <polyline points="7 10 12 15 17 10"></polyline>
-          <line x1="12" y1="15" x2="12" y2="3"></line>
-        </svg>
-        Download PDF
-      </a>
-    </div>
-    <div class="hero-meta">
-      <span class="hero-location" *ngIf="resume.basics.location">
-        📍 {{ resume.basics.location }}
-      </span>
-      <a
-        *ngFor="let link of resume.basics.links"
-        [href]="link.url"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hero-link"
-      >
-        {{ link.label }}
-      </a>
-    </div>
-  </section>
-
-  <!-- Profile Summary -->
-  <section class="profile" *ngIf="resume.profile">
-    <app-section-header
-      title="About"
-      subtitle="Professional summary"
-    ></app-section-header>
-    <p class="profile-text">{{ resume.profile }}</p>
-  </section>
-
-  <!-- Employment Timeline -->
-  <section class="timeline-section">
-    <app-section-header
-      title="Employment"
-      subtitle="Professional experience and achievements"
-    ></app-section-header>
-    <app-vertical-timeline
-      [items]="(employmentTimeline$ | async) || []"
-      [expandFirst]="true"
-    ></app-vertical-timeline>
-  </section>
-
-  <!-- Education Timeline -->
-  <section class="timeline-section">
-    <app-section-header
-      title="Education"
-      subtitle="Academic journey and qualifications"
-    ></app-section-header>
-    <app-vertical-timeline
-      [items]="(educationTimeline$ | async) || []"
-      [expandFirst]="false"
-    ></app-vertical-timeline>
-  </section>
-
-  <!-- Courses -->
-  <section class="courses" *ngIf="resume.courses && resume.courses.length">
-    <app-section-header
-      title="Courses & Certifications"
-      subtitle="Continuous learning"
-    ></app-section-header>
-    <div class="courses-list">
-      <div *ngFor="let course of resume.courses" class="course-item">
-        <img
-          *ngIf="course.logoUrl"
-          [src]="course.logoUrl"
-          [alt]="course.provider + ' logo'"
-          class="course-logo"
-          loading="lazy"
-        />
-        <div class="course-content">
-          <div class="course-title">{{ course.name }}</div>
-          <div class="course-provider">{{ course.provider }}</div>
-          <div class="course-date" *ngIf="course.date">{{ course.date }}</div>
+@if (resumeData$ | async; as resume) {
+  <div class="resume-page">
+    <!-- Hero Section -->
+    <section class="hero" role="banner">
+      <div class="hero-header">
+        <div class="hero-text">
+          <h1 class="hero-name">{{ resume.basics.name }}</h1>
+          <p class="hero-headline">{{ resume.basics.headline }}</p>
         </div>
+        <a
+          href="assets/Georg_Hermann_Prassl_-_Senior_IT_&_Software_Professional.pdf"
+          download="Georg_Hermann_Prassl_-_Resume.pdf"
+          class="download-button"
+          aria-label="Download Resume as PDF"
+          >
+          <svg
+            class="download-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download PDF
+        </a>
       </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section class="skills" *ngIf="resume.skills && resume.skills.length">
-    <app-section-header
-      title="Skills"
-      subtitle="Technical expertise and competencies"
-    ></app-section-header>
-    <div class="skills-grid">
-      <span *ngFor="let skill of resume.skills" class="skill-chip">
-        <span class="skill-name">{{ getSkillName(skill) }}</span>
-        <span class="skill-level" *ngIf="getSkillLevel(skill)">
-          {{ renderStars(getSkillLevel(skill)) }}
-        </span>
-      </span>
-    </div>
-  </section>
-
-  <!-- Languages -->
-  <section
-    class="languages"
-    *ngIf="resume.languages && resume.languages.length"
-  >
-    <app-section-header
-      title="Languages"
-      subtitle="Communication capabilities"
-    ></app-section-header>
-    <div class="languages-list">
-      <div *ngFor="let lang of resume.languages" class="language-item">
-        <span class="language-name">{{ lang.name }}</span>
-        <span class="language-level" *ngIf="lang.level">
-          {{ renderStars(lang.level) }}
-        </span>
+      <div class="hero-meta">
+        @if (resume.basics.location) {
+          <span class="hero-location">
+            📍 {{ resume.basics.location }}
+          </span>
+        }
+        @for (link of resume.basics.links; track link) {
+          <a
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero-link"
+            >
+            {{ link.label }}
+          </a>
+        }
       </div>
-    </div>
-  </section>
-</div>
+    </section>
+    <!-- Profile Summary -->
+    @if (resume.profile) {
+      <section class="profile">
+        <app-section-header
+          title="About"
+          subtitle="Professional summary"
+        ></app-section-header>
+        <p class="profile-text">{{ resume.profile }}</p>
+      </section>
+    }
+    <!-- Employment Timeline -->
+    <section class="timeline-section">
+      <app-section-header
+        title="Employment"
+        subtitle="Professional experience and achievements"
+      ></app-section-header>
+      <app-vertical-timeline
+        [items]="(employmentTimeline$ | async) || []"
+        [expandFirst]="true"
+      ></app-vertical-timeline>
+    </section>
+    <!-- Education Timeline -->
+    <section class="timeline-section">
+      <app-section-header
+        title="Education"
+        subtitle="Academic journey and qualifications"
+      ></app-section-header>
+      <app-vertical-timeline
+        [items]="(educationTimeline$ | async) || []"
+        [expandFirst]="false"
+      ></app-vertical-timeline>
+    </section>
+    <!-- Courses -->
+    @if (resume.courses && resume.courses.length) {
+      <section class="courses">
+        <app-section-header
+          title="Courses & Certifications"
+          subtitle="Continuous learning"
+        ></app-section-header>
+        <div class="courses-list">
+          @for (course of resume.courses; track course) {
+            <div class="course-item">
+              @if (course.logoUrl) {
+                <img
+                  [src]="course.logoUrl"
+                  [alt]="course.provider + ' logo'"
+                  class="course-logo"
+                  loading="lazy"
+                  />
+              }
+              <div class="course-content">
+                <div class="course-title">{{ course.name }}</div>
+                <div class="course-provider">{{ course.provider }}</div>
+                @if (course.date) {
+                  <div class="course-date">{{ course.date }}</div>
+                }
+              </div>
+            </div>
+          }
+        </div>
+      </section>
+    }
+    <!-- Skills -->
+    @if (resume.skills && resume.skills.length) {
+      <section class="skills">
+        <app-section-header
+          title="Skills"
+          subtitle="Technical expertise and competencies"
+        ></app-section-header>
+        <div class="skills-grid">
+          @for (skill of resume.skills; track skill) {
+            <span class="skill-chip">
+              <span class="skill-name">{{ getSkillName(skill) }}</span>
+              @if (getSkillLevel(skill)) {
+                <span class="skill-level">
+                  {{ renderStars(getSkillLevel(skill)) }}
+                </span>
+              }
+            </span>
+          }
+        </div>
+      </section>
+    }
+    <!-- Languages -->
+    @if (resume.languages && resume.languages.length) {
+      <section
+        class="languages"
+        >
+        <app-section-header
+          title="Languages"
+          subtitle="Communication capabilities"
+        ></app-section-header>
+        <div class="languages-list">
+          @for (lang of resume.languages; track lang) {
+            <div class="language-item">
+              <span class="language-name">{{ lang.name }}</span>
+              @if (lang.level) {
+                <span class="language-level">
+                  {{ renderStars(lang.level) }}
+                </span>
+              }
+            </div>
+          }
+        </div>
+      </section>
+    }
+  </div>
+}

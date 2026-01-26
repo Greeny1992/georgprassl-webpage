@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -22,11 +22,9 @@ import { TimelineItemData } from '../../shared/components/timeline-item/timeline
   standalone: true,
   imports: [
     AsyncPipe,
-    NgFor,
-    NgIf,
     SectionHeaderComponent,
-    VerticalTimelineComponent,
-  ],
+    VerticalTimelineComponent
+],
   templateUrl: './resume-page.component.html',
   styleUrls: ['./resume-page.component.scss'],
 })

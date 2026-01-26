@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NgIf } from '@angular/common';
+
 
 /**
  * Reusable section header with title and optional subtitle.
@@ -8,13 +8,15 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-section-header',
   standalone: true,
-  imports: [NgIf],
+  imports: [],
   template: `
     <header class="section-header">
       <h2 class="section-title">{{ title }}</h2>
-      <p class="section-subtitle" *ngIf="subtitle">{{ subtitle }}</p>
+      @if (subtitle) {
+        <p class="section-subtitle">{{ subtitle }}</p>
+      }
     </header>
-  `,
+    `,
   styles: [
     `
       .section-header {
