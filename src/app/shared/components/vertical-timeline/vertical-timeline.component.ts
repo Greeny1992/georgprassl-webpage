@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { TimelineItemData } from '../timeline-item/timeline-item.component';
 
@@ -12,7 +12,7 @@ import { TimelineItemData } from '../timeline-item/timeline-item.component';
   imports: [],
   template: `
     <div class="vertical-timeline" role="list">
-      @for (item of items; track trackByTitle(i, item); let i = $index) {
+      @for (item of items(); track trackByTitle(i, item); let i = $index) {
         <div
           class="timeline-entry"
           [class.timeline-entry--expanded]="expandedIndex === i"
@@ -20,7 +20,7 @@ import { TimelineItemData } from '../timeline-item/timeline-item.component';
           >
           <div class="timeline-marker">
             <div class="timeline-dot"></div>
-            @if (i < items.length - 1) {
+            @if (i < items().length - 1) {
               <div class="timeline-line"></div>
             }
           </div>
@@ -77,13 +77,13 @@ import { TimelineItemData } from '../timeline-item/timeline-item.component';
   styleUrls: ['./vertical-timeline.component.scss'],
 })
 export class VerticalTimelineComponent {
-  @Input() items: TimelineItemData[] = [];
-  @Input() expandFirst = true;
+  readonly items = input<TimelineItemData[]>([]);
+  readonly expandFirst = input(true);
 
   expandedIndex: number | null = null;
 
   ngOnInit() {
-    if (this.expandFirst && this.items.length > 0) {
+    if (this.expandFirst() && this.items().length > 0) {
       this.expandedIndex = 0;
     }
   }

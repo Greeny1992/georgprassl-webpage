@@ -48,42 +48,36 @@
     <!-- Profile Summary -->
     @if (resume.profile) {
       <section class="profile">
-        <app-section-header
-          title="About"
+        <app-section-header title="About"
           subtitle="Professional summary"
-        ></app-section-header>
+         />
         <p class="profile-text">{{ resume.profile }}</p>
       </section>
     }
     <!-- Employment Timeline -->
     <section class="timeline-section">
-      <app-section-header
-        title="Employment"
+      <app-section-header title="Employment"
         subtitle="Professional experience and achievements"
-      ></app-section-header>
-      <app-vertical-timeline
-        [items]="(employmentTimeline$ | async) || []"
+       />
+      <app-vertical-timeline [items]="(employmentTimeline$ | async) || []"
         [expandFirst]="true"
-      ></app-vertical-timeline>
+       />
     </section>
     <!-- Education Timeline -->
     <section class="timeline-section">
-      <app-section-header
-        title="Education"
+      <app-section-header title="Education"
         subtitle="Academic journey and qualifications"
-      ></app-section-header>
-      <app-vertical-timeline
-        [items]="(educationTimeline$ | async) || []"
+       />
+      <app-vertical-timeline [items]="(educationTimeline$ | async) || []"
         [expandFirst]="false"
-      ></app-vertical-timeline>
+       />
     </section>
     <!-- Courses -->
     @if (resume.courses && resume.courses.length) {
       <section class="courses">
-        <app-section-header
-          title="Courses & Certifications"
+        <app-section-header title="Courses & Certifications"
           subtitle="Continuous learning"
-        ></app-section-header>
+         />
         <div class="courses-list">
           @for (course of resume.courses; track course) {
             <div class="course-item">
@@ -110,10 +104,9 @@
     <!-- Skills -->
     @if (resume.skills && resume.skills.length) {
       <section class="skills">
-        <app-section-header
-          title="Skills"
+        <app-section-header title="Skills"
           subtitle="Technical expertise and competencies"
-        ></app-section-header>
+         />
         <div class="skills-grid">
           @for (skill of resume.skills; track skill) {
             <span class="skill-chip">
@@ -133,10 +126,9 @@
       <section
         class="languages"
         >
-        <app-section-header
-          title="Languages"
+        <app-section-header title="Languages"
           subtitle="Communication capabilities"
-        ></app-section-header>
+         />
         <div class="languages-list">
           @for (lang of resume.languages; track lang) {
             <div class="language-item">

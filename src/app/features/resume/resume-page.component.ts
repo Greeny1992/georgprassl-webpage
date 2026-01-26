@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -29,11 +29,16 @@ import { TimelineItemData } from '../../shared/components/timeline-item/timeline
   styleUrls: ['./resume-page.component.scss'],
 })
 export class ResumePageComponent implements OnInit {
+  private resumeDataService = inject(ResumeDataService);
+
   resumeData$!: Observable<ResumeData>;
   educationTimeline$!: Observable<TimelineItemData[]>;
   employmentTimeline$!: Observable<TimelineItemData[]>;
 
-  constructor(private resumeDataService: ResumeDataService) {}
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() {}
 
   ngOnInit(): void {
     this.resumeData$ = this.resumeDataService.resumeData$;

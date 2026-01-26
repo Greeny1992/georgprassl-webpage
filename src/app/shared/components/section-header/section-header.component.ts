@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 
 
 /**
@@ -11,7 +11,7 @@ import { Component, Input } from '@angular/core';
   imports: [],
   template: `
     <header class="section-header">
-      <h2 class="section-title">{{ title }}</h2>
+      <h2 class="section-title">{{ title() }}</h2>
       @if (subtitle) {
         <p class="section-subtitle">{{ subtitle }}</p>
       }
@@ -60,6 +60,6 @@ import { Component, Input } from '@angular/core';
   ],
 })
 export class SectionHeaderComponent {
-  @Input() title = '';
+  readonly title = input('');
   @Input() subtitle = '';
 }

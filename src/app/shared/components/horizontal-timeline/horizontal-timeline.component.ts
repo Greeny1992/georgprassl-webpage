@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NgFor } from '@angular/common';
+
 import {
   TimelineItemComponent,
   TimelineItemData,
@@ -13,25 +13,26 @@ import { HorizontalScrollHijackDirective } from '../../directives/horizontal-scr
 @Component({
   selector: 'app-horizontal-timeline',
   standalone: true,
-  imports: [NgFor, TimelineItemComponent, HorizontalScrollHijackDirective],
+  imports: [TimelineItemComponent, HorizontalScrollHijackDirective],
   template: `
     <div
       class="horizontal-timeline"
       appHorizontalScrollHijack
       role="region"
       [attr.aria-label]="'Timeline for ' + type"
-    >
+      >
       <div class="timeline-track">
         <div class="timeline-center-line"></div>
         <div class="timeline-items">
-          <app-timeline-item
-            *ngFor="let item of items; trackBy: trackByTitle"
-            [item]="item"
-          ></app-timeline-item>
+          @for (item of items; track trackByTitle($index, item)) {
+            <app-timeline-item
+              [item]="item"
+            ></app-timeline-item>
+          }
         </div>
       </div>
     </div>
-  `,
+    `,
   styleUrls: ['./horizontal-timeline.component.scss'],
 })
 export class HorizontalTimelineComponent {

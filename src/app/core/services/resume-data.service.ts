@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, shareReplay } from 'rxjs/operators';
@@ -18,6 +18,8 @@ import {
   providedIn: 'root',
 })
 export class ResumeDataService {
+  private readonly http = inject(HttpClient);
+
   private readonly dataUrl = 'assets/resume.json';
 
   /**
@@ -26,7 +28,10 @@ export class ResumeDataService {
    */
   readonly resumeData$: Observable<ResumeData>;
 
-  constructor(private readonly http: HttpClient) {
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() {
     this.resumeData$ = this.http.get<ResumeData>(this.dataUrl).pipe(
       map((data) => this.validateAndNormalize(data)),
       catchError((error) => {
