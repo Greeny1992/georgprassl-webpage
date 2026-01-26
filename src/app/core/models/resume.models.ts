@@ -24,6 +24,7 @@ export interface EmploymentItem {
   start: string; // Format: YYYY-MM
   end?: string; // Optional: if missing, display "Present"
   highlights?: string[];
+  logoUrl?: string; // Optional logo URL for company
 }
 
 export interface EducationItem {
@@ -33,23 +34,31 @@ export interface EducationItem {
   start: string; // Format: YYYY-MM
   end?: string; // Optional: if missing, display "Present"
   focus?: string; // Optional description/specialization
+  logoUrl?: string; // Optional logo URL for institution
 }
 
 export interface CourseItem {
   name: string;
   provider: string;
   date?: string; // Format: YYYY-MM
+  expiryDate?: string; // Optional expiry date
+  logoUrl?: string; // Optional logo URL for certification provider
 }
 
 export interface LanguageItem {
   name: string;
-  level?: string; // Optional proficiency level
+  level?: number; // Optional proficiency level (1-5)
+}
+
+export interface SkillItem {
+  name: string;
+  level?: number; // Optional proficiency level (1-5)
 }
 
 export interface ResumeData {
   basics: ResumeBasics;
   profile?: string;
-  skills: string[];
+  skills: (string | SkillItem)[];
   languages: LanguageItem[];
   employment: EmploymentItem[];
   education: EducationItem[];

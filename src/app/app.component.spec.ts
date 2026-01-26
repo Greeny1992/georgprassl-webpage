@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 import { AppComponent } from './app.component';
-import { CvService } from './cv/cv.service';
+import { ResumeDataService } from './core/services/resume-data.service';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -10,9 +10,9 @@ describe('AppComponent', () => {
       imports: [RouterTestingModule, AppComponent],
       providers: [
         {
-          provide: CvService,
+          provide: ResumeDataService,
           useValue: {
-            cv$: of({
+            resumeData$: of({
               basics: {
                 name: 'Test Name',
                 headline: 'Test Headline',
@@ -45,7 +45,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.app-name')?.textContent).toContain(
-      'Test Name'
+      'Test Name',
     );
   });
 });

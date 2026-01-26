@@ -10,7 +10,7 @@ import {
   EducationItem,
 } from '../../core/models/resume.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
-import { HorizontalTimelineComponent } from '../../shared/components/horizontal-timeline/horizontal-timeline.component';
+import { VerticalTimelineComponent } from '../../shared/components/vertical-timeline/vertical-timeline.component';
 import { TimelineItemData } from '../../shared/components/timeline-item/timeline-item.component';
 
 /**
@@ -25,7 +25,7 @@ import { TimelineItemData } from '../../shared/components/timeline-item/timeline
     NgFor,
     NgIf,
     SectionHeaderComponent,
-    HorizontalTimelineComponent,
+    VerticalTimelineComponent,
   ],
   templateUrl: './resume-page.component.html',
   styleUrls: ['./resume-page.component.scss'],
@@ -42,12 +42,12 @@ export class ResumePageComponent implements OnInit {
 
     // Transform education data to timeline format
     this.educationTimeline$ = this.resumeData$.pipe(
-      map((data) => this.transformEducation(data.education))
+      map((data) => this.transformEducation(data.education)),
     );
 
     // Transform employment data to timeline format
     this.employmentTimeline$ = this.resumeData$.pipe(
-      map((data) => this.transformEmployment(data.employment))
+      map((data) => this.transformEmployment(data.employment)),
     );
   }
 
@@ -58,6 +58,7 @@ export class ResumePageComponent implements OnInit {
         subtitle: item.institution,
         dateRange: this.formatDateRange(item.start, item.end),
         details: item.focus,
+        logoUrl: item.logoUrl,
         _sortStart: item.start,
         _sortEnd: item.end || '9999-99', // Present items treated as future for sorting
       }))
@@ -77,6 +78,7 @@ export class ResumePageComponent implements OnInit {
         subtitle: item.company,
         dateRange: this.formatDateRange(item.start, item.end),
         highlights: item.highlights,
+        logoUrl: item.logoUrl,
         _sortStart: item.start,
         _sortEnd: item.end || '9999-99', // Present items treated as future for sorting
       }))
@@ -112,5 +114,23 @@ export class ResumePageComponent implements OnInit {
     const startFormatted = formatMonth(start);
     const endFormatted = end ? formatMonth(end) : 'Present';
     return `${startFormatted} – ${endFormatted}`;
+  }
+
+  // Helper method to get skill name (supports both string and SkillItem)
+  getSkillName(skill: string | any): string {
+    return typeof skill === 'string' ? skill : skill.name;
+  }
+
+  // Helper method to get skill level (supports both string and SkillItem)
+  getSkillLevel(skill: string | any): number | undefined {
+    return typeof skill === 'string' ? undefined : skill.level;
+  }
+
+  // Render stars for skill/language levels (1-5)
+  renderStars(level: number | undefined): string {
+    if (!level) return '';
+    const fullStars = '★'.repeat(level);
+    const emptyStars = '☆'.repeat(5 - level);
+    return fullStars + emptyStars;
   }
 }

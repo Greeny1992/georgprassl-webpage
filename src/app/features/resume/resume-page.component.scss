@@ -1,95 +1,164 @@
 /**
- * Resume page: main container with Notion-like styling
+ * Modern Resume Page Styling
+ * Clean, professional design with smooth interactions
  */
 
 .resume-page {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 48px 32px;
+  padding: 64px 40px 120px;
   min-height: 100vh;
-  color: var(--mat-sys-on-surface, #111);
+  color: var(--app-text);
 
   @media (max-width: 768px) {
-    padding: 32px 20px;
+    padding: 40px 24px 80px;
   }
 }
 
-// Hero section
+// Hero section - Professional header
 .hero {
-  margin-bottom: 64px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid var(--mat-sys-outline-variant, rgba(0, 0, 0, 0.12));
+  margin-bottom: 80px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid var(--app-border);
+
+  @media (max-width: 768px) {
+    margin-bottom: 56px;
+    padding-bottom: 32px;
+  }
+}
+
+.hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 28px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+  }
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
 }
 
 .hero-name {
-  font-size: 52px;
-  font-weight: 800;
+  font-size: 56px;
+  font-weight: 700;
   letter-spacing: -0.04em;
-  margin: 0 0 14px 0;
+  margin: 0 0 16px 0;
+  color: var(--app-text-heading);
+  font-family: "Source Serif 4", Georgia, serif;
+  line-height: 1.1;
   background: linear-gradient(
     135deg,
-    var(--mat-sys-on-surface, #111) 0%,
-    var(--mat-sys-primary, #2563eb) 100%
+    var(--app-text-heading) 0%,
+    var(--app-accent) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 
   @media (max-width: 768px) {
-    font-size: 38px;
+    font-size: 40px;
   }
 }
 
-.hero-headline {
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 1.5;
-  color: var(--mat-sys-on-surface-variant, rgba(0, 0, 0, 0.65));
-  margin: 0 0 24px 0;
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--app-accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: var(--app-shadow-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  border: 2px solid var(--app-accent);
+
+  &:hover {
+    background: var(--app-accent-hover);
+    border-color: var(--app-accent-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--app-shadow-lg);
+    text-decoration: none;
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: var(--app-shadow-md);
+  }
 
   @media (max-width: 768px) {
-    font-size: 19px;
+    width: 100%;
+    justify-content: center;
+    padding: 16px 24px;
+  }
+}
+
+.download-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.hero-headline {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--app-accent);
+  margin: 0 0 28px 0;
+  letter-spacing: -0.01em;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
   }
 }
 
 .hero-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 20px;
   align-items: center;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .hero-location {
-  color: var(--mat-sys-on-surface-variant, rgba(0, 0, 0, 0.6));
+  color: var(--app-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .hero-link {
-  color: var(--mat-sys-primary, #2563eb);
+  color: var(--app-accent);
   text-decoration: none;
-  transition: color 0.2s ease-out;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: var(--app-accent-light);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
 
   &:hover {
-    color: var(--mat-sys-primary, #1e40af);
-    text-decoration: underline;
+    background: var(--app-accent);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: var(--app-shadow-md);
   }
 }
 
-// Profile section
+// Profile section - Eye-catching summary
 .profile {
-  margin-bottom: 64px;
-}
-
-.profile-text {
-  font-size: 16px;
-  line-height: 1.7;
-  color: var(--mat-sys-on-surface, #111);
-  margin: 0;
-  max-width: 800px;
-}
-
-// Timeline sections
-.timeline-section {
   margin-bottom: 80px;
 
   @media (max-width: 768px) {
@@ -97,111 +166,218 @@
   }
 }
 
-// Skills section
+.profile-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--app-text);
+  margin: 0;
+  max-width: 900px;
+  padding: 28px;
+  background: var(--app-surface);
+  border-radius: 16px;
+  border-left: 4px solid var(--app-accent);
+  box-shadow: var(--app-shadow-sm);
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    padding: 20px;
+  }
+}
+
+// Timeline sections - Elegant spacing
+.timeline-section {
+  margin-bottom: 96px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 64px;
+  }
+}
+
+// Skills section - Modern chip design
 .skills {
-  margin-bottom: 64px;
+  margin-bottom: 80px;
 }
 
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .skill-chip {
-  display: inline-block;
-  padding: 9px 18px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-  border: 1.5px solid var(--mat-sys-outline-variant, rgba(0, 0, 0, 0.12));
-  border-radius: 24px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--mat-sys-on-surface, #111);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: var(--app-surface);
+  border: 2px solid var(--app-border);
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--app-text);
+  box-shadow: var(--app-shadow-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
 
   &:hover {
-    background: linear-gradient(
-      135deg,
-      var(--mat-sys-primary, #2563eb) 0%,
-      #1e40af 100%
-    );
-    border-color: var(--mat-sys-primary, #2563eb);
-    color: #ffffff;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-    transform: translateY(-2px);
+    background: var(--app-accent);
+    border-color: var(--app-accent);
+    color: white;
+    box-shadow: var(--app-shadow-lg);
+    transform: translateY(-3px) scale(1.05);
+
+    .skill-level {
+      color: white;
+    }
   }
 }
 
-// Languages section
+.skill-name {
+  font-weight: 600;
+}
+
+.skill-level {
+  font-size: 13px;
+  color: var(--app-accent);
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+// Languages section - Professional cards
 .languages {
-  margin-bottom: 64px;
+  margin-bottom: 80px;
 }
 
 .languages-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
 }
 
 .language-item {
-  padding: 16px;
-  background: var(--mat-sys-surface-container, #f5f5f5);
-  border: 1px solid var(--mat-sys-outline-variant, rgba(0, 0, 0, 0.12));
+  padding: 20px 24px;
+  background: var(--app-surface);
+  border: 2px solid var(--app-border);
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: var(--app-shadow-sm);
+  transition: all 0.25s ease;
+
+  &:hover {
+    border-color: var(--app-accent);
+    box-shadow: var(--app-shadow-md);
+    transform: translateY(-2px);
+  }
 }
 
 .language-name {
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--mat-sys-on-surface, #111);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--app-text);
 }
 
 .language-level {
-  font-size: 13px;
-  color: var(--mat-sys-on-surface-variant, rgba(0, 0, 0, 0.6));
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--app-accent);
+  padding: 6px 14px;
+  background: var(--app-accent-light);
+  border-radius: 12px;
+  letter-spacing: 1px;
 }
 
-// Courses section
+// Courses section - Enhanced cards
 .courses {
-  margin-bottom: 64px;
+  margin-bottom: 80px;
 }
 
 .courses-list {
   display: grid;
-  gap: 16px;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
 
 .course-item {
-  padding: 16px;
-  background: var(--mat-sys-surface-container, #f5f5f5);
-  border: 1px solid var(--mat-sys-outline-variant, rgba(0, 0, 0, 0.12));
-  border-radius: 12px;
-  transition: all 0.2s ease-out;
+  padding: 24px;
+  background: var(--app-surface);
+  border: 2px solid var(--app-border);
+  border-radius: 16px;
+  box-shadow: var(--app-shadow-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--app-accent);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+  }
 
   &:hover {
-    background: var(--mat-sys-surface-container-high, #e8e8e8);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-color: var(--app-accent);
+    box-shadow: var(--app-shadow-lg);
+    transform: translateY(-4px);
+
+    &::before {
+      transform: scaleY(1);
+    }
   }
 }
 
+.course-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: white;
+  padding: 8px;
+  box-shadow: var(--app-shadow-sm);
+  border: 1px solid var(--app-border);
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.course-content {
+  flex: 1;
+  min-width: 0;
+}
+
 .course-title {
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--mat-sys-on-surface, #111);
-  margin-bottom: 4px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--app-text-heading);
+  margin-bottom: 8px;
+  line-height: 1.4;
 }
 
 .course-provider {
-  font-size: 14px;
-  color: var(--mat-sys-on-surface-variant, rgba(0, 0, 0, 0.7));
-  margin-bottom: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--app-muted);
+  margin-bottom: 8px;
 }
 
 .course-date {
-  font-size: 13px;
-  color: var(--mat-sys-on-surface-variant, rgba(0, 0, 0, 0.6));
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--app-accent);
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--app-accent-light);
+  border-radius: 8px;
 }

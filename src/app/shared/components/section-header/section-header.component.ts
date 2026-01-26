@@ -18,38 +18,39 @@ import { NgIf } from '@angular/common';
   styles: [
     `
       .section-header {
-        margin-bottom: 24px;
+        margin-bottom: 32px;
       }
 
       .section-title {
-        font-size: 28px;
+        font-size: 32px;
         font-weight: 700;
         letter-spacing: -0.03em;
-        margin: 0 0 8px 0;
-        color: var(--mat-sys-primary, #2563eb);
+        margin: 0 0 12px 0;
+        color: var(--app-text-heading);
         position: relative;
         display: inline-block;
+        font-family: 'Source Serif 4', Georgia, serif;
       }
 
       .section-title::after {
         content: '';
         position: absolute;
-        bottom: -4px;
+        bottom: -6px;
         left: 0;
-        width: 40px;
-        height: 3px;
+        width: 60px;
+        height: 4px;
         background: linear-gradient(
           to right,
-          var(--mat-sys-primary, #2563eb),
-          transparent
+          var(--app-accent),
+          var(--app-accent-light)
         );
         border-radius: 2px;
       }
 
       .section-subtitle {
-        font-size: 14px;
-        font-weight: 400;
-        color: var(--mat-sys-on-surface-variant, rgba(0, 0, 0, 0.55));
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--app-muted);
         margin: 0;
         line-height: 1.6;
       }

@@ -1,10 +1,10 @@
 # GeorgprasslWebpage
 
-CV website built with Angular and hosted on Firebase Hosting.
+Professional resume website built with Angular and hosted on Firebase Hosting.
 
-## Maintain the CV
+## Maintain the Resume
 
-Edit `src/assets/cv/cv.json` (employment, education, courses, skills, etc.).
+Edit `src/assets/resume.json` to update your employment, education, courses, skills, languages, and personal information.
 
 ## Development server
 

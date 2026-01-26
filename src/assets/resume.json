@@ -1,48 +1,107 @@
 {
   "basics": {
-    "name": "Georg Praßl",
-    "headline": "Full Stack Developer",
+    "name": "Georg Hermann Praßl",
+    "headline": "Senior IT & Software Professional",
     "location": "Graz, Austria",
     "phone": "+43 664 39 799 71",
     "email": "georg.p92@gmx.at",
     "links": [
       {
         "label": "LinkedIn",
-        "url": ""
+        "url": "https://www.linkedin.com/in/georg-pra%C3%9Fl-a18008179/"
+      },
+      {
+        "label": "georgprassl.at",
+        "url": "https://www.georgprassl.at"
       }
     ]
   },
-  "profile": "IT expert skilled in programming, project management, and team leadership. Proven success at DCCS GmbH, Rockets Investments, and Magna Steyr.",
+  "profile": "Senior IT & Software Professional and Full-Stack Developer with over 10 years of experience across enterprise IT, automotive manufacturing, and modern web application development. Expert in Agile Software Development, Agile Project Management, Angular, TypeScript, Node.js, MSSQL, and enterprise IT operations, with a strong track record as Project Lead and IT Consultant. Led a local datacenter transformation and optimization project, reducing a planned 5-year budget from approximately €1.5 million to €170,000 through requirement optimization and efficient solution design.",
   "skills": [
-    "Innovation",
-    "Coaching",
-    "Agile Software Development",
-    "Sprint Planning",
-    "Problem Solving",
-    "Management",
-    "Agile Project Management",
-    "Java",
-    "Production Systems",
-    ".NET Framework",
-    "Scrum",
-    "SQL",
-    "Project Management",
-    "React Native",
-    "TypeScript",
-    "Angular"
+    {
+      "name": "Innovation",
+      "level": 4
+    },
+    {
+      "name": "Coaching",
+      "level": 4
+    },
+    {
+      "name": "Agile Software Development",
+      "level": 5
+    },
+    {
+      "name": "Problem Solving",
+      "level": 4
+    },
+    {
+      "name": "Agile Project Management",
+      "level": 5
+    },
+    {
+      "name": "Project Management",
+      "level": 4
+    },
+    {
+      "name": "Java",
+      "level": 3
+    },
+    {
+      "name": ".NET Framework",
+      "level": 3
+    },
+    {
+      "name": "TypeScript",
+      "level": 5
+    },
+    {
+      "name": "Angular",
+      "level": 5
+    },
+    {
+      "name": "SQL",
+      "level": 4
+    }
   ],
-  "languages": [{ "name": "English" }, { "name": "German" }],
+  "languages": [
+    { "name": "German", "level": 5 },
+    { "name": "English", "level": 5 },
+    { "name": "Norwegian", "level": 1 }
+  ],
   "employment": [
+    {
+      "title": "IT and Software Professional",
+      "company": "Mercedes-Benz G GmbH",
+      "location": "Graz",
+      "start": "2024-06",
+      "logoUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1C6COjxjXg8cNeJTC-6Xn2oWlCkWGH8Dz3A&s",
+      "highlights": [
+        "Business Relationship Manager and IT-Consultant for Engineering",
+        "Project Lead for local datacenter transformation and optimization",
+        "Planned and managed a projected 5-year budget of approximately €1.5 million",
+        "Optimized technical and operational requirements, reducing the total project budget to €170,000 while maintaining required service levels and operational stability",
+        "Responsible person for datacenter operation and managing the serviceprovider",
+        "Full-Stack-Developer: Angular, TypeScript, SCSS, Jest, NodeJS Express, Keycloak, MSSQL"
+      ]
+    },
     {
       "title": "Full Stack Developer",
       "company": "Rockets Investments GmbH",
       "location": "Graz",
       "start": "2022-02",
+      "end": "2024-05",
+      "logoUrl": "https://rockets.investments/assets/images/logos/rockets_logo_black.svg",
       "highlights": [
-        "Responsible for front-end of platform (Angular, TypeScript, SCSS, Jest)",
-        "Partly developing in back-end (Java, SQL)",
-        "Re-branding of platform",
-        "Completely new development of front-end and enhancing back-end"
+        "Responsible to implement re-branding of company on webpage",
+        "Led transition from JSP webpage to newest Angular",
+        "Implemented Ory Kratos as the new IAM-Framework",
+        "Enhanced and optimized legacy backend in JAVA",
+        "Introduced GitLab CI/CD pipelines",
+        "Responsible for workplace topics",
+        "Standardized onboarding for new employees (hardware and software)",
+        "Created standardized hardware/software inventory",
+        "Due to relocation of office: Planned network infrastructure and overlooked the implementation",
+        "Negotiated new internet contracts and tariffs"
       ]
     },
     {
@@ -51,27 +110,29 @@
       "location": "Graz",
       "start": "2019-08",
       "end": "2022-01",
+      "logoUrl": "https://cdn.prod.website-files.com/67cef594d249cc7f2983a6f5/68e6707e1eb8eaab97187433_dccs%20logo.svg",
       "highlights": [
         "Full stack developer",
         "Back-end: .NET Framework",
         "Front-end: React, React Native, Angular, Dojo Toolkit",
         "Worked with Scrum methods",
-        "Regularly attending sprint planning, daily stand-ups, story estimating",
-        "Worked on projects from 2–3 months up to 3 years (Austria & Germany)"
+        "Regularly attending at sprint planning, daily stand-ups, story estimating",
+        "Worked on different projects, from small two to three months projects to large three years projects for customers in Austria and Germany"
       ]
     },
     {
-      "title": "System Administrator & Test Planner",
+      "title": "System administrator and Test planner",
       "company": "Magna Steyr",
       "location": "Graz",
       "start": "2017-04",
       "end": "2019-07",
+      "logoUrl": "https://companieslogo.com/img/orig/MGA-61d0a782.png?t=1720244492",
       "highlights": [
-        "Support and further development of the internal manufacturing management system (MMS)",
-        "Responsible for connecting new production systems to the MMS",
-        "3rd level support",
+        "Support and further development of the company's internal manufacturing management system (MMS)",
+        "Responsible for the connection of new production systems to the MMS",
+        "3rd Level Support",
         "Training of new employees at the MMS",
-        "Part of planning team to decide and plan new production lines"
+        "Part of planning-team to decide and plan new production lines"
       ]
     },
     {
@@ -80,29 +141,33 @@
       "location": "Graz",
       "start": "2016-02",
       "end": "2017-03",
+      "logoUrl": "https://companieslogo.com/img/orig/MGA-61d0a782.png?t=1720244492",
       "highlights": [
         "Responsible for 20 employees on the night shift",
         "Ensuring the quality of the parts produced",
         "Creation of daily shift reports",
-        "Worked with project managers on cost savings and resource optimization"
+        "Worked with project managers to develop and implement strategies for cost savings and resource optimization"
       ]
     },
     {
-      "title": "Soldier (KIOP/KPE)",
+      "title": "Soldier KIOP/KPE",
       "company": "Austrian Army",
-      "location": "Klagenfurt",
+      "location": "Klagenfurt am Wörthersee",
       "start": "2012-05",
       "end": "2016-01",
+      "logoUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCPK_0KreIjwBX4JzO2UBdcxauECiESpPmRw&s",
       "highlights": [
-        "Six months as KFOR soldier in Kosovo",
+        "Six months as KFOR Soldier in Kosovo",
         "Worked with international teams"
       ]
     },
     {
-      "title": "Body Shop Technician",
+      "title": "Body shop technician",
       "company": "Magna Steyr",
       "location": "Graz",
       "start": "2008-09",
+      "end": "2012-04",
+      "logoUrl": "https://companieslogo.com/img/orig/MGA-61d0a782.png?t=1720244492",
       "highlights": ["Apprenticeship", "Technician in production"]
     }
   ],
@@ -113,7 +178,8 @@
       "location": "Graz",
       "start": "2021-10",
       "end": "2023-10",
-      "focus": "Software and Digital Experience Engineering"
+      "focus": "Software and Digital Experience Engineering",
+      "logoUrl": "https://cdn3.fh-joanneum.at/media/2023/11/angewandte-informatik-10.png"
     },
     {
       "degree": "Bachelor of Science in Engineering",
@@ -121,32 +187,44 @@
       "location": "Graz",
       "start": "2018-10",
       "end": "2021-07",
-      "focus": "Business Software Development"
+      "focus": "Business Software Development",
+      "logoUrl": "https://www.campus02.at/wp-content/uploads/2023/01/logo-campus02.svg"
     },
     {
-      "degree": "A-level certification",
-      "institution": "HTBVA Bulme Graz",
+      "degree": "A level certification",
+      "institution": "HTBLVA Bulme Graz",
       "location": "Graz",
       "start": "2016-09",
       "end": "2018-09",
-      "focus": "Evening school: German, English, mathematics, mechanical engineering"
+      "focus": "Evening school with graduation in German, English, mathematics and mechanical engineering",
+      "logoUrl": "https://www.bulme.at/wp-content/uploads/2023/02/htbla-bulme-graz-goesting-favicon-web-02.png"
     }
   ],
   "courses": [
     {
+      "name": "Certified SAFe 6 Agilist",
+      "provider": "Scaled Agile",
+      "date": "2025-10",
+      "expiryDate": "2025-10",
+      "logoUrl": "https://images.credly.com/images/3e987079-3013-4359-9ad3-578c0b864e3d/image.png"
+    },
+    {
       "name": "Certified IPMA Level D",
       "provider": "IPMA",
-      "date": "2020-05"
+      "date": "2020-05",
+      "logoUrl": "https://www.pma.at/templates/pma/img/logo-2024.png"
     },
     {
       "name": "ITIL v4 Foundation",
       "provider": "ITIL",
-      "date": "2021-05"
+      "date": "2021-05",
+      "logoUrl": "https://zoctech.com/wp-content/uploads/2022/05/itil-foundation-1-1.jpg"
     },
     {
       "name": "Sicherheitsvertrauensperson",
       "provider": "AUVA",
-      "date": "2018-03"
+      "date": "2018-03",
+      "logoUrl": "https://upload.wikimedia.org/wikipedia/de/a/aa/Logo_AUVA.svg"
     }
   ]
 }

@@ -7,6 +7,7 @@ export interface TimelineItemData {
   dateRange: string;
   details?: string;
   highlights?: string[];
+  logoUrl?: string;
   _sortStart?: string;
   _sortEnd?: string;
 }
