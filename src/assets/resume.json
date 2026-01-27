@@ -115,16 +115,11 @@
       "end": "2024-05",
       "logoUrl": "https://rockets.investments/assets/images/logos/rockets_logo_black.svg",
       "highlights": [
-        "Responsible to implement re-branding of company on webpage",
-        "Led transition from JSP webpage to newest Angular",
-        "Implemented Ory Kratos as the new IAM-Framework",
-        "Enhanced and optimized legacy backend in JAVA",
-        "Introduced GitLab CI/CD pipelines",
-        "Responsible for workplace topics",
-        "Standardized onboarding for new employees (hardware and software)",
-        "Created standardized hardware/software inventory",
-        "Due to relocation of office: Planned network infrastructure and overlooked the implementation",
-        "Negotiated new internet contracts and tariffs"
+        "Change Management: Led the high-impact re-branding initiative and successfully migrated legacy JSP web architecture to Angular, improving performance and scalability.",
+        "IAM Modernization: Spearheaded the implementation of Ory Kratos as the new enterprise Identity and Access Management (IAM) framework.",
+        "Backend & DevOps: Optimized legacy Java backends and introduced GitLab CI/CD pipelines to automate deployments and increase release velocity.",
+        "Infrastructure Leadership: Orchestrated office relocation technical strategy; designed network infrastructure and negotiated high-value ISP contracts and tariffs.",
+        "Operational Standardization: Transformed workplace operations by creating a centralized hardware/software inventory and standardizing the employee onboarding process."
       ]
     },
     {
@@ -166,10 +161,9 @@
       "end": "2017-03",
       "logoUrl": "https://companieslogo.com/img/orig/MGA-61d0a782.png?t=1720244492",
       "highlights": [
-        "Responsible for 20 employees on the night shift",
-        "Ensuring the quality of the parts produced",
-        "Creation of daily shift reports",
-        "Worked with project managers to develop and implement strategies for cost savings and resource optimization"
+        "Led 20 employees on the night shift; ensured output quality and safety compliance.",
+        "Produced daily shift reports and optimized resource allocation.",
+        "Resolved conflicts and strengthened team cohesion; partnered with project managers on cost and resource strategies."
       ]
     },
     {
@@ -180,8 +174,8 @@
       "end": "2016-01",
       "logoUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCPK_0KreIjwBX4JzO2UBdcxauECiESpPmRw&s",
       "highlights": [
-        "Six months as KFOR Soldier in Kosovo",
-        "Worked with international teams"
+        "KIOP/KPE soldier with a 6-month KFOR deployment in Kosovo.",
+        "Worked in multinational teams under high-pressure conditions, adhering to strict safety and communication protocols."
       ]
     },
     {
