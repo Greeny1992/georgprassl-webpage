@@ -1,6 +1,7 @@
 import { Component, input } from '@angular/core';
 
-import { TimelineItemData } from '../timeline-item/timeline-item.component';
+import { TimelineItemData } from '../../models/timeline.models';
+import { HighlightItem } from 'src/app/core/models/resume.models';
 
 /**
  * Modern vertical timeline with expandable cards.
@@ -17,7 +18,7 @@ import { TimelineItemData } from '../timeline-item/timeline-item.component';
           class="timeline-entry"
           [class.timeline-entry--expanded]="expandedIndex === i"
           role="listitem"
-          >
+        >
           <div class="timeline-marker">
             <div class="timeline-dot"></div>
             @if (i < items().length - 1) {
@@ -32,7 +33,7 @@ import { TimelineItemData } from '../timeline-item/timeline-item.component';
                   [alt]="item.subtitle + ' logo'"
                   class="timeline-logo"
                   loading="lazy"
-                  />
+                />
               }
               <div class="timeline-header-main">
                 <h3 class="timeline-title">{{ item.title }}</h3>
@@ -44,7 +45,7 @@ import { TimelineItemData } from '../timeline-item/timeline-item.component';
                   class="timeline-toggle"
                   [attr.aria-expanded]="expandedIndex === i"
                   aria-label="Toggle details"
-                  >
+                >
                   <span class="toggle-icon">{{
                     expandedIndex === i ? '−' : '+'
                   }}</span>
@@ -59,11 +60,35 @@ import { TimelineItemData } from '../timeline-item/timeline-item.component';
                   </p>
                 }
                 @if (item.highlights && item.highlights.length) {
-                  <ul
-                    class="timeline-highlights"
-                    >
-                    @for (highlight of item.highlights; track highlight) {
-                      <li>{{ highlight }}</li>
+                  <ul class="timeline-highlights">
+                    @for (highlight of item.highlights; track $index) {
+                      <li>
+                        @if (isHighlightItem(highlight)) {
+                          <span
+                            [class.bold]="
+                              highlight.subHighlights &&
+                              highlight.subHighlights.length
+                            "
+                          >
+                            {{ highlight.mainHighlight }}
+                          </span>
+                          @if (
+                            highlight.subHighlights &&
+                            highlight.subHighlights.length
+                          ) {
+                            <ul class="sub-highlights">
+                              @for (
+                                subHighlight of highlight.subHighlights;
+                                track $index
+                              ) {
+                                <li>{{ subHighlight }}</li>
+                              }
+                            </ul>
+                          }
+                        } @else {
+                          {{ highlight }}
+                        }
+                      </li>
                     }
                   </ul>
                 }
@@ -73,7 +98,7 @@ import { TimelineItemData } from '../timeline-item/timeline-item.component';
         </div>
       }
     </div>
-    `,
+  `,
   styleUrls: ['./vertical-timeline.component.scss'],
 })
 export class VerticalTimelineComponent {
@@ -94,5 +119,11 @@ export class VerticalTimelineComponent {
 
   trackByTitle(_index: number, item: TimelineItemData): string {
     return item.title;
+  }
+
+  isHighlightItem(
+    highlight: HighlightItem | string,
+  ): highlight is HighlightItem {
+    return typeof highlight === 'object' && 'mainHighlight' in highlight;
   }
 }

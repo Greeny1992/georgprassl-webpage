@@ -17,13 +17,18 @@ export interface ResumeBasics {
   links?: ResumeLink[];
 }
 
+export interface HighlightItem {
+  mainHighlight: string;
+  subHighlights?: string[];
+}
+
 export interface EmploymentItem {
   title: string;
   company: string;
   location?: string;
   start: string; // Format: YYYY-MM
   end?: string; // Optional: if missing, display "Present"
-  highlights?: string[];
+  highlights?: (string | HighlightItem)[];
   logoUrl?: string; // Optional logo URL for company
 }
 

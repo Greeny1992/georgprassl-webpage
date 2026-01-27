@@ -38,7 +38,7 @@ export class ResumeDataService {
         console.error('Failed to load resume data:', error);
         return of(getEmptyResumeData());
       }),
-      shareReplay({ bufferSize: 1, refCount: false })
+      shareReplay({ bufferSize: 1, refCount: false }),
     );
   }
 

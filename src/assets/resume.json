@@ -2,7 +2,7 @@
   "basics": {
     "name": "Georg Hermann Praßl",
     "headline": "Senior IT & Software Professional",
-    "location": "Graz, Austria",
+    "location": "now: Graz, Austria; future: Krems/Donau, Austria",
     "phone": "+43 664 39 799 71",
     "email": "georg.p92@gmx.at",
     "links": [
@@ -11,13 +11,17 @@
         "url": "https://www.linkedin.com/in/georg-pra%C3%9Fl-a18008179/"
       },
       {
-        "label": "georgprassl.at",
-        "url": "https://www.georgprassl.at"
+        "label": "office@georgprassl.at",
+        "url": "mailto:office@georgprassl.at"
       }
     ]
   },
-  "profile": "Senior IT & Software Professional and Full-Stack Developer with over 10 years of experience across enterprise IT, automotive manufacturing, and modern web application development. Expert in Agile Software Development, Agile Project Management, Angular, TypeScript, Node.js, MSSQL, and enterprise IT operations, with a strong track record as Project Lead and IT Consultant. Led a local datacenter transformation and optimization project, reducing a planned 5-year budget from approximately €1.5 million to €170,000 through requirement optimization and efficient solution design.",
+  "profile": "Senior IT leader and full-stack engineer with 10+ years across Enterprise IT and automotive manufacturing. Combine hands‑on engineering (Angular, TypeScript, Node.js/.NET, SQL, Keycloak) with Agile delivery (Scrum, SAFe), stakeholder management, and conflict resolution to align technology with business outcomes. As BRM/IT consultant and project lead, led a local datacenter transformation—optimizing scope and vendor model to cut a planned 5‑year budget from €1.5M to €170k while maintaining SLAs and operational stability. Track record of modernizing platforms, introducing CI/CD, and motivating high‑performing teams; recognized for lateral leadership and clear communication from shop floor to C‑level.",
   "skills": [
+    {
+      "name": "Lateral Leadership",
+      "level": 4
+    },
     {
       "name": "Innovation",
       "level": 4
@@ -46,6 +50,7 @@
       "name": "Java",
       "level": 3
     },
+
     {
       "name": ".NET Framework",
       "level": 3
@@ -76,12 +81,30 @@
       "start": "2024-06",
       "logoUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1C6COjxjXg8cNeJTC-6Xn2oWlCkWGH8Dz3A&s",
       "highlights": [
-        "Business Relationship Manager and IT-Consultant for Engineering",
-        "Project Lead for local datacenter transformation and optimization",
-        "Planned and managed a projected 5-year budget of approximately €1.5 million",
-        "Optimized technical and operational requirements, reducing the total project budget to €170,000 while maintaining required service levels and operational stability",
-        "Responsible person for datacenter operation and managing the serviceprovider",
-        "Full-Stack-Developer: Angular, TypeScript, SCSS, Jest, NodeJS Express, Keycloak, MSSQL"
+        {
+          "mainHighlight": "Business Relationship Manager & IT Consultant (Engineering)",
+          "subHighlights": [
+            "Lateral Leadership: Bridged Engineering and IT departments, aligning conflicting stakeholder interests with strategic business goals.",
+            "Conflict Resolution: Navigated departmental silos and high-pressure negotiations to streamline digitalization roadmaps.",
+            "Team Building: Mentored cross-functional project teams and motivated external providers to exceed SLA requirements."
+          ]
+        },
+        {
+          "mainHighlight": "Project Lead | Datacenter Transformation",
+          "subHighlights": [
+            "Strategic Optimization: Re-engineered a 5-year project scope, slashing the planned budget from €1.5M to €170k (88% saving) while maintaining full operational stability.",
+            "Stakeholder Management: Influenced executive buy-in for lean infrastructure by prioritizing critical requirements over legacy 'nice-to-haves.'",
+            "Operations Oversight: Primary lead for datacenter operations and third-party service provider management."
+          ]
+        },
+        {
+          "mainHighlight": "Full Stack Developer | Internal Tools",
+          "subHighlights": [
+            "Tech Stack: Angular, TypeScript, Node.js, SQL, Keycloak.",
+            "Agile Delivery: Spearheaded CI/CD implementation and Agile best practices to enhance development efficiency and product quality.",
+            "Legacy Modernization: Led the overhaul of outdated internal tools, improving user experience and system performance."
+          ]
+        }
       ]
     },
     {

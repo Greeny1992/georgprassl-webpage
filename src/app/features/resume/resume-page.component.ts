@@ -11,7 +11,7 @@ import {
 } from '../../core/models/resume.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { VerticalTimelineComponent } from '../../shared/components/vertical-timeline/vertical-timeline.component';
-import { TimelineItemData } from '../../shared/components/timeline-item/timeline-item.component';
+import { TimelineItemData } from '../../shared/models/timeline.models';
 
 /**
  * Main resume page component.
@@ -20,11 +20,7 @@ import { TimelineItemData } from '../../shared/components/timeline-item/timeline
 @Component({
   selector: 'app-resume-page',
   standalone: true,
-  imports: [
-    AsyncPipe,
-    SectionHeaderComponent,
-    VerticalTimelineComponent
-],
+  imports: [AsyncPipe, SectionHeaderComponent, VerticalTimelineComponent],
   templateUrl: './resume-page.component.html',
   styleUrls: ['./resume-page.component.scss'],
 })
@@ -80,7 +76,7 @@ export class ResumePageComponent implements OnInit {
         title: item.title,
         subtitle: item.company,
         dateRange: this.formatDateRange(item.start, item.end),
-        highlights: item.highlights,
+        highlights: item.highlights ?? [],
         logoUrl: item.logoUrl,
         _sortStart: item.start,
         _sortEnd: item.end || '9999-99', // Present items treated as future for sorting
