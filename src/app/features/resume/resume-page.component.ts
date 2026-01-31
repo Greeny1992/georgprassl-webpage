@@ -8,6 +8,7 @@ import {
   ResumeData,
   EmploymentItem,
   EducationItem,
+  SkillItem,
 } from '../../core/models/resume.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { VerticalTimelineComponent } from '../../shared/components/vertical-timeline/vertical-timeline.component';
@@ -115,14 +116,14 @@ export class ResumePageComponent implements OnInit {
     return `${startFormatted} – ${endFormatted}`;
   }
 
-  // Helper method to get skill name (supports both string and SkillItem)
-  getSkillName(skill: string | any): string {
-    return typeof skill === 'string' ? skill : skill.name;
+  // Helper method to get skill name
+  getSkillName(skill: SkillItem): string {
+    return skill.name;
   }
 
-  // Helper method to get skill level (supports both string and SkillItem)
-  getSkillLevel(skill: string | any): number | undefined {
-    return typeof skill === 'string' ? undefined : skill.level;
+  // Helper method to get skill subline
+  getSkillSubline(skill: SkillItem): string | undefined {
+    return skill.subline;
   }
 
   // Render stars for skill/language levels (1-5)

@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Georg Hermann Praßl",
-    "headline": "Senior IT & Software Professional",
+    "headline": "Technical Delivery Lead | Full-Stack Architecture | Agile Transformation",
     "location": "now: Graz, Austria; future: Krems/Donau, Austria",
     "phone": "+43 664 39 799 71",
     "email": "georg.p92@gmx.at",
@@ -19,58 +19,29 @@
   "profile": "Senior IT leader and full-stack engineer with 10+ years across Enterprise IT and automotive manufacturing. Combine hands‑on engineering (Angular, TypeScript, Node.js/.NET, SQL, Keycloak) with Agile delivery (Scrum, SAFe), stakeholder management, and conflict resolution to align technology with business outcomes. As BRM/IT consultant and project lead, led a local datacenter transformation—optimizing scope and vendor model to cut a planned 5‑year budget from €1.5M to €170k while maintaining SLAs and operational stability. Track record of modernizing platforms, introducing CI/CD, and motivating high‑performing teams; recognized for lateral leadership and clear communication from shop floor to C‑level.",
   "skills": [
     {
-      "name": "Lateral Leadership",
-      "level": 4
+      "name": "Technical Leadership & Team Enablement",
+      "subline": "Teamlead for 20 people, onboarding standards, coaching, stakeholder alignment"
     },
     {
-      "name": "Innovation",
-      "level": 4
+      "name": "Agile Delivery & Project Management",
+      "subline": "SAFe, Scrum, IPMA, end-to-end responsibility, planning, execution"
     },
     {
-      "name": "Coaching",
-      "level": 4
+      "name": "Solution Architecture & Full-Stack Engineering",
+      "subline": "Angular/TypeScript frontend + Node/Express + MSSQL + IAM + legacy modernization"
     },
     {
-      "name": "Agile Software Development",
-      "level": 5
+      "name": "IT Operations & Infrastructure Ownership",
+      "subline": "Datacenter transformation, service provider management, network planning, ITIL mindset"
     },
     {
-      "name": "Problem Solving",
-      "level": 4
-    },
-    {
-      "name": "Agile Project Management",
-      "level": 5
-    },
-    {
-      "name": "Project Management",
-      "level": 4
-    },
-    {
-      "name": "Java",
-      "level": 3
-    },
-
-    {
-      "name": ".NET Framework",
-      "level": 3
-    },
-    {
-      "name": "TypeScript",
-      "level": 5
-    },
-    {
-      "name": "Angular",
-      "level": 5
-    },
-    {
-      "name": "SQL",
-      "level": 4
+      "name": "Business & Stakeholder Management",
+      "subline": "Budget ownership €1.5M → €170k optimization, Business Relationship Manager, vendor negotiation"
     }
   ],
   "languages": [
     { "name": "German", "level": 5 },
-    { "name": "English", "level": 5 },
+    { "name": "English", "level": 4 },
     { "name": "Norwegian", "level": 1 }
   ],
   "employment": [

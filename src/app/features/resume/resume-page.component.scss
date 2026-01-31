@@ -199,19 +199,20 @@
 }
 
 .skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
 }
 
 .skill-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 16px 20px;
   background: var(--app-surface);
   border: 2px solid var(--app-border);
-  border-radius: 30px;
+  border-radius: 16px;
   font-size: 15px;
   font-weight: 600;
   color: var(--app-text);
@@ -226,21 +227,23 @@
     box-shadow: var(--app-shadow-lg);
     transform: translateY(-3px) scale(1.05);
 
-    .skill-level {
+    .skill-name,
+    .skill-subline {
       color: white;
     }
   }
 }
 
 .skill-name {
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--app-text-heading);
 }
 
-.skill-level {
-  font-size: 13px;
-  color: var(--app-accent);
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
+.skill-subline {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--app-muted);
+  line-height: 1.5;
 }
 
 // Languages section - Professional cards

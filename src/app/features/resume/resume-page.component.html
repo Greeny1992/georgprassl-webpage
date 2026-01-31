@@ -8,18 +8,18 @@
           <p class="hero-headline">{{ resume.basics.headline }}</p>
         </div>
         <a
-          href="assets/Georg_Hermann_Prassl_-_Senior_IT_&_Software_Professional.pdf"
-          download="Georg_Hermann_Prassl_-_Resume.pdf"
+          href="assets/Georg_Hermann_Prassl_-_Technical_Delivery_Lead__Full-Stack_Architecture__Agile_Transformation.pdf"
+          download="Georg_Hermann_Prassl_-_Technical_Delivery_Lead__Full-Stack_Architecture__Agile_Transformation.pdf"
           class="download-button"
           aria-label="Download Resume as PDF"
-          >
+        >
           <svg
             class="download-icon"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
             stroke-width="2"
-            >
+          >
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -29,9 +29,7 @@
       </div>
       <div class="hero-meta">
         @if (resume.basics.location) {
-          <span class="hero-location">
-            📍 {{ resume.basics.location }}
-          </span>
+          <span class="hero-location"> 📍 {{ resume.basics.location }} </span>
         }
         @for (link of resume.basics.links; track link) {
           <a
@@ -39,7 +37,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="hero-link"
-            >
+          >
             {{ link.label }}
           </a>
         }
@@ -48,36 +46,39 @@
     <!-- Profile Summary -->
     @if (resume.profile) {
       <section class="profile">
-        <app-section-header title="About"
-          subtitle="Professional summary"
-         />
+        <app-section-header title="About" subtitle="Professional summary" />
         <p class="profile-text">{{ resume.profile }}</p>
       </section>
     }
     <!-- Employment Timeline -->
     <section class="timeline-section">
-      <app-section-header title="Employment"
+      <app-section-header
+        title="Employment"
         subtitle="Professional experience and achievements"
-       />
-      <app-vertical-timeline [items]="(employmentTimeline$ | async) || []"
+      />
+      <app-vertical-timeline
+        [items]="(employmentTimeline$ | async) || []"
         [expandFirst]="true"
-       />
+      />
     </section>
     <!-- Education Timeline -->
     <section class="timeline-section">
-      <app-section-header title="Education"
+      <app-section-header
+        title="Education"
         subtitle="Academic journey and qualifications"
-       />
-      <app-vertical-timeline [items]="(educationTimeline$ | async) || []"
+      />
+      <app-vertical-timeline
+        [items]="(educationTimeline$ | async) || []"
         [expandFirst]="false"
-       />
+      />
     </section>
     <!-- Courses -->
     @if (resume.courses && resume.courses.length) {
       <section class="courses">
-        <app-section-header title="Courses & Certifications"
+        <app-section-header
+          title="Courses & Certifications"
           subtitle="Continuous learning"
-         />
+        />
         <div class="courses-list">
           @for (course of resume.courses; track course) {
             <div class="course-item">
@@ -87,7 +88,7 @@
                   [alt]="course.provider + ' logo'"
                   class="course-logo"
                   loading="lazy"
-                  />
+                />
               }
               <div class="course-content">
                 <div class="course-title">{{ course.name }}</div>
@@ -104,31 +105,29 @@
     <!-- Skills -->
     @if (resume.skills && resume.skills.length) {
       <section class="skills">
-        <app-section-header title="Skills"
+        <app-section-header
+          title="Skills"
           subtitle="Technical expertise and competencies"
-         />
+        />
         <div class="skills-grid">
           @for (skill of resume.skills; track skill) {
-            <span class="skill-chip">
+            <div class="skill-chip">
               <span class="skill-name">{{ getSkillName(skill) }}</span>
-              @if (getSkillLevel(skill)) {
-                <span class="skill-level">
-                  {{ renderStars(getSkillLevel(skill)) }}
-                </span>
+              @if (getSkillSubline(skill)) {
+                <span class="skill-subline">{{ getSkillSubline(skill) }}</span>
               }
-            </span>
+            </div>
           }
         </div>
       </section>
     }
     <!-- Languages -->
     @if (resume.languages && resume.languages.length) {
-      <section
-        class="languages"
-        >
-        <app-section-header title="Languages"
+      <section class="languages">
+        <app-section-header
+          title="Languages"
           subtitle="Communication capabilities"
-         />
+        />
         <div class="languages-list">
           @for (lang of resume.languages; track lang) {
             <div class="language-item">

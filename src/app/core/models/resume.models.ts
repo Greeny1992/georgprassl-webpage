@@ -57,13 +57,13 @@ export interface LanguageItem {
 
 export interface SkillItem {
   name: string;
-  level?: number; // Optional proficiency level (1-5)
+  subline?: string; // Optional short description/subline
 }
 
 export interface ResumeData {
   basics: ResumeBasics;
   profile?: string;
-  skills: (string | SkillItem)[];
+  skills: SkillItem[];
   languages: LanguageItem[];
   employment: EmploymentItem[];
   education: EducationItem[];
