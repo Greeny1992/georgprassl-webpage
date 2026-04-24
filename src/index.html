@@ -2,9 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Georg Hermann Praßl</title>
+    <title>Georg Praßl — IT & Software Consulting</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Georg Praßl — one-person IT & software consulting practice in Graz, Austria. Full-stack engineering, delivery leadership, ITSM and DevOps."
+    />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('app-theme');
+          if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
     <link
       rel="apple-touch-icon"
       sizes="57x57"
@@ -90,6 +107,10 @@
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
