@@ -62,6 +62,11 @@ export class ResumeDataService {
     return {
       basics: data.basics,
       profile: data.profile || '',
+      services: Array.isArray(data.services) ? data.services : [],
+      projects: Array.isArray(data.projects) ? data.projects : [],
+      about: data.about || undefined,
+      testimonials: Array.isArray(data.testimonials) ? data.testimonials : [],
+      techStack: Array.isArray(data.techStack) ? data.techStack : [],
       skills: Array.isArray(data.skills) ? data.skills : [],
       languages: Array.isArray(data.languages) ? data.languages : [],
       employment: Array.isArray(data.employment) ? data.employment : [],

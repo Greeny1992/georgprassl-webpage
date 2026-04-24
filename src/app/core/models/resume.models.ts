@@ -5,12 +5,17 @@
 
 export interface ResumeLink {
   label: string;
-  url?: string; // Optional: may be empty/missing
+  url?: string;
 }
 
 export interface ResumeBasics {
   name: string;
   headline: string;
+  tagline?: string;
+  valueProp?: string;
+  heroSubline?: string;
+  availability?: string;
+  website?: string;
   location?: string;
   phone?: string;
   email?: string;
@@ -26,43 +31,96 @@ export interface EmploymentItem {
   title: string;
   company: string;
   location?: string;
-  start: string; // Format: YYYY-MM
-  end?: string; // Optional: if missing, display "Present"
+  start: string;
+  end?: string;
   highlights?: (string | HighlightItem)[];
-  logoUrl?: string; // Optional logo URL for company
+  logoUrl?: string;
 }
 
 export interface EducationItem {
   degree: string;
   institution: string;
   location?: string;
-  start: string; // Format: YYYY-MM
-  end?: string; // Optional: if missing, display "Present"
-  focus?: string; // Optional description/specialization
-  logoUrl?: string; // Optional logo URL for institution
+  start: string;
+  end?: string;
+  focus?: string;
+  logoUrl?: string;
 }
 
 export interface CourseItem {
   name: string;
   provider: string;
-  date?: string; // Format: YYYY-MM
-  expiryDate?: string; // Optional expiry date
-  logoUrl?: string; // Optional logo URL for certification provider
+  date?: string;
+  expiryDate?: string;
+  logoUrl?: string;
 }
 
 export interface LanguageItem {
   name: string;
-  level?: number; // Optional proficiency level (1-5)
+  level?: number;
 }
 
 export interface SkillItem {
   name: string;
-  subline?: string; // Optional short description/subline
+  subline?: string;
+}
+
+export interface ServiceItem {
+  icon: string;
+  title: string;
+  summary: string;
+  bullets?: string[];
+}
+
+export interface ProjectResult {
+  label: string;
+  value: string;
+}
+
+export interface ProjectItem {
+  title: string;
+  company?: string;
+  role?: string;
+  period?: string;
+  description: string;
+  image?: string;
+  tech?: string[];
+  results?: ProjectResult[];
+}
+
+export interface Credential {
+  label: string;
+  detail?: string;
+}
+
+export interface AboutSection {
+  photo?: string;
+  intro: string;
+  story?: string;
+  credentials?: Credential[];
+  personal?: string[];
+}
+
+export interface Testimonial {
+  quote: string;
+  author: string;
+  role?: string;
+  avatar?: string | null;
+}
+
+export interface TechStackGroup {
+  group: string;
+  items: string[];
 }
 
 export interface ResumeData {
   basics: ResumeBasics;
   profile?: string;
+  services?: ServiceItem[];
+  projects?: ProjectItem[];
+  about?: AboutSection;
+  testimonials?: Testimonial[];
+  techStack?: TechStackGroup[];
   skills: SkillItem[];
   languages: LanguageItem[];
   employment: EmploymentItem[];
@@ -70,25 +128,23 @@ export interface ResumeData {
   courses: CourseItem[];
 }
 
-/**
- * Runtime type guard to ensure basics is valid
- */
 export function isValidBasics(obj: any): obj is ResumeBasics {
   return (
     obj && typeof obj.name === 'string' && typeof obj.headline === 'string'
   );
 }
 
-/**
- * Provides safe fallback for resume data
- */
 export function getEmptyResumeData(): ResumeData {
   return {
     basics: {
-      name: 'Resume',
-      headline: 'Professional',
+      name: 'Portfolio',
+      headline: 'Consultant',
     },
     profile: '',
+    services: [],
+    projects: [],
+    testimonials: [],
+    techStack: [],
     skills: [],
     languages: [],
     employment: [],
