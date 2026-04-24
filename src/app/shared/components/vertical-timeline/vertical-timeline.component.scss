@@ -63,8 +63,8 @@
   background: linear-gradient(
     to bottom,
     var(--app-accent) 0%,
-    rgba(37, 99, 235, 0.3) 50%,
-    rgba(37, 99, 235, 0.1) 100%
+    color-mix(in srgb, var(--app-accent) 35%, transparent) 50%,
+    color-mix(in srgb, var(--app-accent) 12%, transparent) 100%
   );
   margin-top: 8px;
   border-radius: 2px;
