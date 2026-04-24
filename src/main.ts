@@ -10,6 +10,33 @@ import { ROUTES } from './app/app-routing.routes';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
+import {
+  LucideAngularModule,
+  Compass,
+  Code,
+  LifeBuoy,
+  GitBranch,
+  Menu,
+  X,
+  Sun,
+  Moon,
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Globe,
+  ArrowRight,
+  Download,
+  Quote,
+  Check,
+  ChevronDown,
+  ExternalLink,
+  Award,
+  Mountain,
+  Shield,
+  GraduationCap,
+  Calendar,
+} from 'lucide-angular';
 
 if (environment.production) {
   enableProdMode();
@@ -26,6 +53,34 @@ bootstrapApplication(AppComponent, {
   providers: [
     provideZoneChangeDetection(),
     importProvidersFrom(BrowserModule),
+    importProvidersFrom(
+      LucideAngularModule.pick({
+        Compass,
+        Code,
+        LifeBuoy,
+        GitBranch,
+        Menu,
+        X,
+        Sun,
+        Moon,
+        Mail,
+        Phone,
+        MapPin,
+        Linkedin,
+        Globe,
+        ArrowRight,
+        Download,
+        Quote,
+        Check,
+        ChevronDown,
+        ExternalLink,
+        Award,
+        Mountain,
+        Shield,
+        GraduationCap,
+        Calendar,
+      }),
+    ),
     provideAnimationsAsync(),
     provideHttpClient(),
     provideRouter(ROUTES),

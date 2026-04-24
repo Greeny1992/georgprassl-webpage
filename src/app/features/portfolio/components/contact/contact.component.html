@@ -1,0 +1,86 @@
+<section id="contact" class="section section--contact">
+  <div class="section-inner">
+    <div class="contact-card" appInView>
+      <div class="contact-copy">
+        <span class="section-eyebrow">Contact</span>
+        <h2 class="section-title">Got a project in mind?</h2>
+        <p class="section-lede">
+          Tell me about the problem — a paragraph is enough. I usually reply
+          within one business day with either a fit assessment or a referral.
+        </p>
+
+        <div class="contact-ctas">
+          @if (basics().email) {
+            <a class="contact-cta" [href]="'mailto:' + basics().email + '?subject=Consulting%20enquiry'">
+              <lucide-icon name="mail" size="18"></lucide-icon>
+              Email me
+            </a>
+          }
+          @if (basics().phone) {
+            <a class="contact-cta contact-cta--ghost" [href]="'tel:' + basics().phone">
+              <lucide-icon name="phone" size="18"></lucide-icon>
+              {{ basics().phone }}
+            </a>
+          }
+        </div>
+      </div>
+
+      <aside class="contact-details">
+        @if (basics().location) {
+          <div class="contact-detail">
+            <lucide-icon name="map-pin" size="16"></lucide-icon>
+            <div>
+              <dt>Location</dt>
+              <dd>{{ basics().location }}</dd>
+            </div>
+          </div>
+        }
+        @if (basics().email) {
+          <div class="contact-detail">
+            <lucide-icon name="mail" size="16"></lucide-icon>
+            <div>
+              <dt>Email</dt>
+              <dd><a [href]="'mailto:' + basics().email">{{ basics().email }}</a></dd>
+            </div>
+          </div>
+        }
+        @if (basics().phone) {
+          <div class="contact-detail">
+            <lucide-icon name="phone" size="16"></lucide-icon>
+            <div>
+              <dt>Phone</dt>
+              <dd>{{ basics().phone }}</dd>
+            </div>
+          </div>
+        }
+        @if (basics().website) {
+          <div class="contact-detail">
+            <lucide-icon name="globe" size="16"></lucide-icon>
+            <div>
+              <dt>Website</dt>
+              <dd><a [href]="basics().website" target="_blank" rel="noopener">{{ basics().website }}</a></dd>
+            </div>
+          </div>
+        }
+
+        @if ((basics().links?.length ?? 0) > 0) {
+          <div class="contact-links">
+            @for (link of basics().links; track link.label) {
+              @if (link.url) {
+                <a
+                  class="contact-link"
+                  [href]="link.url"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <lucide-icon [name]="linkIcon(link.label)" size="16"></lucide-icon>
+                  {{ link.label }}
+                </a>
+              }
+            }
+          </div>
+        }
+      </aside>
+    </div>
+  </div>
+</section>

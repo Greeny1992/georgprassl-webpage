@@ -1,0 +1,71 @@
+<section id="top" class="hero" role="banner">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-orb hero-orb--a"></div>
+    <div class="hero-orb hero-orb--b"></div>
+    <div class="hero-grid"></div>
+  </div>
+
+  <div class="hero-inner">
+    @if (basics().availability) {
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        {{ basics().availability }}
+      </div>
+    }
+
+    <h1 class="hero-title">
+      <span class="hero-title-eyebrow">{{ basics().tagline || 'IT & Software Consulting' }}</span>
+      <span class="hero-title-main">
+        Software delivery that actually
+        <span class="hero-title-accent">ships</span>.
+      </span>
+    </h1>
+
+    @if (basics().valueProp) {
+      <p class="hero-value">{{ basics().valueProp }}</p>
+    }
+
+    @if (basics().heroSubline) {
+      <p class="hero-subline">{{ basics().heroSubline }}</p>
+    }
+
+    <div class="hero-ctas">
+      <a class="hero-cta hero-cta--primary" href="#contact">
+        Let's talk
+        <lucide-icon name="arrow-right" size="18"></lucide-icon>
+      </a>
+      <a class="hero-cta hero-cta--ghost" href="#work">
+        See my work
+      </a>
+      <a
+        class="hero-cta hero-cta--subtle"
+        href="assets/Georg_Hermann_Prassl_-_Technical_Delivery_Lead.pdf"
+        download
+      >
+        <lucide-icon name="download" size="16"></lucide-icon>
+        CV (PDF)
+      </a>
+    </div>
+
+    <ul class="hero-meta" aria-label="Quick facts">
+      @if (basics().location) {
+        <li>
+          <lucide-icon name="map-pin" size="15"></lucide-icon>
+          {{ basics().location }}
+        </li>
+      }
+      @if (basics().email) {
+        <li>
+          <lucide-icon name="mail" size="15"></lucide-icon>
+          <a [href]="'mailto:' + basics().email">{{ basics().email }}</a>
+        </li>
+      }
+      @if (basics().phone) {
+        <li>
+          <lucide-icon name="phone" size="15"></lucide-icon>
+          {{ basics().phone }}
+        </li>
+      }
+    </ul>
+  </div>
+</section>

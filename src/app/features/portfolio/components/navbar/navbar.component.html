@@ -1,0 +1,52 @@
+<header class="nav" [class.nav--scrolled]="scrolled()">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top" (click)="closeMenu()">
+      <span class="nav-brand-mark" aria-hidden="true">GP</span>
+      <span class="nav-brand-text">Georg Praßl</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      @for (item of items; track item.href) {
+        <a class="nav-link" [href]="item.href">{{ item.label }}</a>
+      }
+    </nav>
+
+    <div class="nav-actions">
+      <button
+        type="button"
+        class="nav-icon-btn"
+        (click)="toggleTheme()"
+        [attr.aria-label]="theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+      >
+        <lucide-icon [name]="theme === 'dark' ? 'sun' : 'moon'" size="18"></lucide-icon>
+      </button>
+      <a class="nav-cta" href="#contact">
+        Let's talk
+        <lucide-icon name="arrow-right" size="16"></lucide-icon>
+      </a>
+      <button
+        type="button"
+        class="nav-icon-btn nav-menu-btn"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="open()"
+        aria-label="Toggle navigation"
+      >
+        <lucide-icon [name]="open() ? 'x' : 'menu'" size="20"></lucide-icon>
+      </button>
+    </div>
+  </div>
+
+  @if (open()) {
+    <nav class="nav-mobile" aria-label="Mobile">
+      @for (item of items; track item.href) {
+        <a class="nav-mobile-link" [href]="item.href" (click)="closeMenu()">
+          {{ item.label }}
+        </a>
+      }
+      <a class="nav-mobile-cta" href="#contact" (click)="closeMenu()">
+        Let's talk
+        <lucide-icon name="arrow-right" size="16"></lucide-icon>
+      </a>
+    </nav>
+  }
+</header>

@@ -1,0 +1,94 @@
+<section id="about" class="section">
+  <div class="section-inner">
+    <div class="about-layout">
+      <aside class="about-media" appInView>
+        @if (about()?.photo) {
+          <img
+            [src]="about()?.photo"
+            alt="Portrait of Georg Praßl"
+            class="about-photo"
+          />
+        }
+        <div class="about-badge">
+          <lucide-icon name="mountain" size="16"></lucide-icon>
+          <span>Based in Graz, Austria</span>
+        </div>
+      </aside>
+
+      <div class="about-content" appInView>
+        <header class="section-head section-head--inline">
+          <span class="section-eyebrow">About</span>
+          <h2 class="section-title">Engineer, delivery lead, alpinist.</h2>
+        </header>
+
+        @if (about()?.intro) {
+          <p class="about-intro">{{ about()?.intro }}</p>
+        }
+        @if (about()?.story) {
+          <p class="about-story">{{ about()?.story }}</p>
+        }
+
+        @if (about()?.credentials?.length) {
+          <div class="about-block">
+            <h3 class="about-subtitle">
+              <lucide-icon name="award" size="16"></lucide-icon>
+              Credentials
+            </h3>
+            <ul class="credential-list">
+              @for (c of about()?.credentials; track c.label) {
+                <li class="credential">
+                  <strong>{{ c.label }}</strong>
+                  @if (c.detail) {
+                    <span>{{ c.detail }}</span>
+                  }
+                </li>
+              }
+            </ul>
+          </div>
+        }
+
+        <div class="about-meta">
+          @if (about()?.personal?.length) {
+            <div class="about-block about-block--inline">
+              <h3 class="about-subtitle">
+                <lucide-icon name="shield" size="16"></lucide-icon>
+                Off the clock
+              </h3>
+              <ul class="plain-list">
+                @for (p of about()?.personal; track p) {
+                  <li>{{ p }}</li>
+                }
+              </ul>
+            </div>
+          }
+
+          @if (languages().length) {
+            <div class="about-block about-block--inline">
+              <h3 class="about-subtitle">
+                <lucide-icon name="globe" size="16"></lucide-icon>
+                Languages
+              </h3>
+              <ul class="language-list">
+                @for (lang of languages(); track lang.name) {
+                  <li class="language">
+                    <span class="language-name">{{ lang.name }}</span>
+                    @if (lang.level) {
+                      <span class="language-dots" [attr.aria-label]="lang.level + ' of 5'">
+                        @for (dot of [1, 2, 3, 4, 5]; track dot) {
+                          <span
+                            class="language-dot"
+                            [class.language-dot--active]="dot <= lang.level"
+                          ></span>
+                        }
+                      </span>
+                    }
+                  </li>
+                }
+              </ul>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

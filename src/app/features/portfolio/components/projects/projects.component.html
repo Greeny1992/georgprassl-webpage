@@ -1,0 +1,71 @@
+<section id="work" class="section section--muted">
+  <div class="section-inner">
+    <header class="section-head" appInView>
+      <span class="section-eyebrow">Selected work</span>
+      <h2 class="section-title">Outcomes, not just projects.</h2>
+      <p class="section-lede">
+        A sample of recent engagements — each one ties code, process and
+        stakeholders together.
+      </p>
+    </header>
+
+    <div class="projects-grid">
+      @for (project of projects(); track project.title; let i = $index) {
+        <article
+          class="project-card"
+          appInView
+          [style.--reveal-delay]="(i * 80) + 'ms'"
+        >
+          <div class="project-media">
+            @if (project.image) {
+              <img
+                [src]="project.image"
+                [alt]="project.title + ' visual'"
+                loading="lazy"
+              />
+            } @else {
+              <div class="project-media-fallback" aria-hidden="true"></div>
+            }
+            <div class="project-media-overlay" aria-hidden="true"></div>
+          </div>
+
+          <div class="project-body">
+            <div class="project-meta">
+              @if (project.company) {
+                <span class="project-company">{{ project.company }}</span>
+              }
+              @if (project.role) {
+                <span class="project-role">· {{ project.role }}</span>
+              }
+              @if (project.period) {
+                <span class="project-period">· {{ project.period }}</span>
+              }
+            </div>
+
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+
+            @if (project.results?.length) {
+              <dl class="project-results">
+                @for (result of project.results; track result.label) {
+                  <div class="project-result">
+                    <dt>{{ result.label }}</dt>
+                    <dd>{{ result.value }}</dd>
+                  </div>
+                }
+              </dl>
+            }
+
+            @if (project.tech?.length) {
+              <ul class="project-tech" aria-label="Tech stack">
+                @for (item of project.tech; track item) {
+                  <li>{{ item }}</li>
+                }
+              </ul>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

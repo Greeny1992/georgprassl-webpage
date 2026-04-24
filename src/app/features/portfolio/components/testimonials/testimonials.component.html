@@ -1,0 +1,42 @@
+<section id="testimonials" class="section">
+  <div class="section-inner">
+    <header class="section-head" appInView>
+      <span class="section-eyebrow">Testimonials</span>
+      <h2 class="section-title">What clients say.</h2>
+      <p class="section-lede section-lede--muted">
+        Placeholder quotes — swap with real client voices once you have written
+        permission. Drop them into <code>resume.json</code>.
+      </p>
+    </header>
+
+    <div class="testimonial-grid">
+      @for (t of testimonials(); track t.author; let i = $index) {
+        <figure
+          class="testimonial"
+          appInView
+          [style.--reveal-delay]="(i * 90) + 'ms'"
+        >
+          <lucide-icon
+            class="testimonial-quote"
+            name="quote"
+            size="28"
+          ></lucide-icon>
+          <blockquote>
+            <p>{{ t.quote }}</p>
+          </blockquote>
+          <figcaption class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">
+              {{ t.author.charAt(0) }}
+            </div>
+            <div>
+              <div class="testimonial-name">{{ t.author }}</div>
+              @if (t.role) {
+                <div class="testimonial-role">{{ t.role }}</div>
+              }
+            </div>
+          </figcaption>
+        </figure>
+      }
+    </div>
+  </div>
+</section>

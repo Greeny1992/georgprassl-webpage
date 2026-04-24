@@ -1,0 +1,92 @@
+@if (resume$ | async; as resume) {
+  <app-navbar />
+
+  <main class="portfolio">
+    <app-hero [basics]="resume.basics" />
+
+    @if ((resume.services?.length ?? 0) > 0) {
+      <app-services [services]="resume.services ?? []" />
+    }
+
+    @if ((resume.projects?.length ?? 0) > 0) {
+      <app-projects [projects]="resume.projects ?? []" />
+    }
+
+    @if (resume.about) {
+      <app-about [about]="resume.about" [languages]="resume.languages" />
+    }
+
+    <section id="experience" class="section">
+      <div class="section-inner">
+        <header class="section-head" appInView>
+          <span class="section-eyebrow">Experience</span>
+          <h2 class="section-title">The career path behind the consulting.</h2>
+          <p class="section-lede">
+            From shop floor to delivery lead — each step shapes how I approach
+            engineering and people problems today.
+          </p>
+        </header>
+        <div appInView>
+          <app-vertical-timeline
+            [items]="(employmentTimeline$ | async) || []"
+            [expandFirst]="true"
+          />
+        </div>
+      </div>
+    </section>
+
+    @if ((resume.techStack?.length ?? 0) > 0) {
+      <app-tech-stack [groups]="resume.techStack ?? []" />
+    }
+
+    <section id="education" class="section section--muted">
+      <div class="section-inner">
+        <header class="section-head" appInView>
+          <span class="section-eyebrow">Education & Certifications</span>
+          <h2 class="section-title">Formal credentials behind the work.</h2>
+        </header>
+        <div class="education-layout">
+          <div appInView>
+            <app-vertical-timeline
+              [items]="(educationTimeline$ | async) || []"
+              [expandFirst]="false"
+            />
+          </div>
+          @if (resume.courses.length) {
+            <aside class="courses" appInView>
+              <h3 class="courses-title">Courses & certifications</h3>
+              <ul class="courses-list">
+                @for (course of resume.courses; track course.name) {
+                  <li class="course">
+                    @if (course.logoUrl) {
+                      <img
+                        class="course-logo"
+                        [src]="course.logoUrl"
+                        [alt]="course.provider + ' logo'"
+                        loading="lazy"
+                      />
+                    }
+                    <div>
+                      <div class="course-name">{{ course.name }}</div>
+                      <div class="course-provider">
+                        {{ course.provider }}@if (course.date) { · {{ course.date }} }
+                      </div>
+                    </div>
+                  </li>
+                }
+              </ul>
+            </aside>
+          }
+        </div>
+      </div>
+    </section>
+
+    @if ((resume.testimonials?.length ?? 0) > 0) {
+      <app-testimonials [testimonials]="resume.testimonials ?? []" />
+    }
+
+    <app-contact [basics]="resume.basics" />
+  </main>
+
+  <app-footer [basics]="resume.basics" />
+}

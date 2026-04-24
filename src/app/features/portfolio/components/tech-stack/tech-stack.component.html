@@ -1,0 +1,29 @@
+<section id="stack" class="section section--muted">
+  <div class="section-inner">
+    <header class="section-head" appInView>
+      <span class="section-eyebrow">Tech stack</span>
+      <h2 class="section-title">Tools I reach for.</h2>
+      <p class="section-lede">
+        Pragmatic, mature tooling. I optimize for what the team can ship and
+        operate, not the hottest framework of the month.
+      </p>
+    </header>
+
+    <div class="stack-groups">
+      @for (group of groups(); track group.group; let i = $index) {
+        <div
+          class="stack-group"
+          appInView
+          [style.--reveal-delay]="(i * 60) + 'ms'"
+        >
+          <h3 class="stack-group-title">{{ group.group }}</h3>
+          <ul class="stack-chips">
+            @for (item of group.items; track item) {
+              <li class="stack-chip">{{ item }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

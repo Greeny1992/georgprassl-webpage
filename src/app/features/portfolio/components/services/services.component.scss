@@ -1,0 +1,105 @@
+:host {
+  display: block;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  position: relative;
+  padding: 28px 26px 26px;
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+  box-shadow: var(--app-shadow-sm);
+  transition: transform var(--app-transition),
+    border-color var(--app-transition),
+    box-shadow var(--app-transition);
+  overflow: hidden;
+  transition-delay: var(--reveal-delay, 0ms);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      var(--app-accent) 0%,
+      var(--app-accent-soft) 100%
+    );
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--app-border-hover);
+    box-shadow: var(--app-shadow-lg);
+
+    &::before {
+      transform: scaleX(1);
+    }
+
+    .service-icon {
+      background: var(--app-accent);
+      color: var(--app-accent-contrast);
+      transform: rotate(-4deg);
+    }
+  }
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  display: inline-grid;
+  place-items: center;
+  background: var(--app-accent-light);
+  color: var(--app-accent);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: all var(--app-transition);
+}
+
+.service-title {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--app-text-heading);
+  letter-spacing: -0.01em;
+}
+
+.service-summary {
+  margin: 0 0 18px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--app-muted);
+}
+
+.service-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--app-text);
+  }
+
+  lucide-icon {
+    color: var(--app-accent);
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+}
