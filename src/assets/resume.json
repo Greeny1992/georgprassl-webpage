@@ -141,7 +141,10 @@
     "intro": "I'm Georg — a Diplom-Ingenieur and full-stack engineer currently working as IT & Software Professional at Mercedes-Benz G GmbH. From summer 2026 I'll be based in Krems an der Donau and available for selected consulting engagements across the DACH region.",
     "story": "My path is unusual: I started on the shop floor as a body-shop technician at Magna Steyr, led a 20-person night-shift team, then served as a KIOP/KPE contract soldier with a six-month KFOR tour in Kosovo before pivoting into software engineering. That background shows up in how I work — calm under pressure, direct communication, and a strong bias for outcomes over theatre.",
     "credentials": [
-      { "label": "Dipl.-Ing.", "detail": "FH Joanneum — Software & Digital Experience Engineering" },
+      {
+        "label": "Dipl.-Ing.",
+        "detail": "FH Joanneum — Software & Digital Experience Engineering"
+      },
       { "label": "SAFe 6 Agilist", "detail": "Scaled Agile, 2025" },
       { "label": "IPMA Level D", "detail": "Project Management Austria, 2020" },
       { "label": "ITIL v4 Foundation", "detail": "Axelos, 2021" }
@@ -152,30 +155,19 @@
       "Former KIOP/KPE soldier, 6-month KFOR deployment"
     ]
   },
-  "testimonials": [
-    {
-      "quote": "Placeholder — a short, punchy quote about delivery, communication or technical judgement goes here.",
-      "author": "Client name",
-      "role": "Role, Company",
-      "avatar": null
-    },
-    {
-      "quote": "Placeholder — pick a quote that highlights lateral leadership, stakeholder alignment or a concrete outcome.",
-      "author": "Client name",
-      "role": "Role, Company",
-      "avatar": null
-    },
-    {
-      "quote": "Placeholder — ideally a technical voice (architect, CTO, lead engineer) speaking to engineering quality.",
-      "author": "Client name",
-      "role": "Role, Company",
-      "avatar": null
-    }
-  ],
+  "testimonials": [],
   "techStack": [
     {
       "group": "Frontend",
-      "items": ["Angular", "React", "React Native", "TypeScript", "SCSS"]
+      "items": [
+        "Angular",
+        "React",
+        "React Native",
+        "TypeScript",
+        "SCSS",
+        "Tailwind CSS",
+        "Ionic"
+      ]
     },
     {
       "group": "Backend",
@@ -183,15 +175,30 @@
     },
     {
       "group": "Data & Identity",
-      "items": ["MSSQL", "MongoDB", "Keycloak", "Ory Kratos"]
+      "items": [
+        "MSSQL",
+        "MongoDB",
+        "MySQL",
+        "PostgreSQL",
+        "Keycloak",
+        "Ory Kratos"
+      ]
     },
     {
       "group": "DevOps & Tooling",
-      "items": ["Docker", "GitLab CI/CD", "Electron", "Jest", "WEBCON"]
+      "items": ["Docker", "GitLab CI/CD", "Electron", "Jest"]
     },
     {
       "group": "Delivery & Ops",
-      "items": ["SAFe 6", "Scrum", "IPMA", "ITIL v4", "IREB", "JIRA", "Confluence"]
+      "items": [
+        "SAFe 6",
+        "Scrum",
+        "IPMA",
+        "ITIL v4",
+        "IREB",
+        "JIRA",
+        "Confluence"
+      ]
     }
   ],
   "skills": [
@@ -376,7 +383,7 @@
       "name": "IREB CPRE Foundation (expected)",
       "provider": "IREB",
       "date": "2026-05",
-      "logoUrl": "https://www.ireb.org/favicon.ico"
+      "logoUrl": "data:image/png;base64,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"
     },
     {
       "name": "ITIL v4 Foundation",
