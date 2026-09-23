@@ -63,15 +63,20 @@
   }
 }
 
-.course-logo {
+.course-logo-initials {
   width: 36px;
   height: 36px;
-  object-fit: contain;
   border-radius: 8px;
-  background: white;
-  padding: 4px;
-  border: 1px solid var(--app-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.02em;
   flex-shrink: 0;
+  user-select: none;
 }
 
 .course-name {

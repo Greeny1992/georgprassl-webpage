@@ -27,14 +27,11 @@ import { HighlightItem } from 'src/app/core/models/resume.models';
           </div>
           <div class="timeline-content">
             <div class="timeline-header" (click)="toggleExpand(i)">
-              @if (item.logoUrl) {
-                <img
-                  [src]="item.logoUrl"
-                  [alt]="item.subtitle + ' logo'"
-                  class="timeline-logo"
-                  loading="lazy"
-                />
-              }
+              <span
+                class="timeline-logo-initials"
+                [style.background-color]="getInitialColor(item.subtitle)"
+                [attr.aria-label]="item.subtitle"
+              >{{ item.initials || getInitials(item.subtitle) }}</span>
               <div class="timeline-header-main">
                 <h3 class="timeline-title">{{ item.title }}</h3>
                 <p class="timeline-subtitle">{{ item.subtitle }}</p>
@@ -125,5 +122,23 @@ export class VerticalTimelineComponent {
     highlight: HighlightItem | string,
   ): highlight is HighlightItem {
     return typeof highlight === 'object' && 'mainHighlight' in highlight;
+  }
+
+  getInitials(name: string): string {
+    return name
+      .split(/[\s-]+/)
+      .filter((w) => w.length > 0)
+      .slice(0, 2)
+      .map((w) => w[0].toUpperCase())
+      .join('');
+  }
+
+  getInitialColor(name: string): string {
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) {
+      hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const hue = ((hash % 360) + 360) % 360;
+    return `hsl(${hue}, 45%, 42%)`;
   }
 }

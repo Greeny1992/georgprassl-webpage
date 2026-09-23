@@ -30,21 +30,21 @@ export interface HighlightItem {
 export interface EmploymentItem {
   title: string;
   company: string;
+  initials?: string;
   location?: string;
   start: string;
   end?: string;
   highlights?: (string | HighlightItem)[];
-  logoUrl?: string;
 }
 
 export interface EducationItem {
   degree: string;
   institution: string;
+  initials?: string;
   location?: string;
   start: string;
   end?: string;
   focus?: string;
-  logoUrl?: string;
 }
 
 export interface CourseItem {
@@ -52,7 +52,6 @@ export interface CourseItem {
   provider: string;
   date?: string;
   expiryDate?: string;
-  logoUrl?: string;
 }
 
 export interface LanguageItem {
