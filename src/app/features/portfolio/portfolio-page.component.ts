@@ -66,9 +66,9 @@ export class PortfolioPageComponent implements OnInit {
       .map((item) => ({
         title: item.title,
         subtitle: item.company,
+        initials: item.initials,
         dateRange: this.formatDateRange(item.start, item.end),
         highlights: item.highlights ?? [],
-        logoUrl: item.logoUrl,
         _sortStart: item.start,
         _sortEnd: item.end || '9999-99',
       }))
@@ -83,9 +83,9 @@ export class PortfolioPageComponent implements OnInit {
       .map((item) => ({
         title: item.degree,
         subtitle: item.institution,
+        initials: item.initials,
         dateRange: this.formatDateRange(item.start, item.end),
         details: item.focus,
-        logoUrl: item.logoUrl,
         _sortStart: item.start,
         _sortEnd: item.end || '9999-99',
       }))
@@ -93,6 +93,24 @@ export class PortfolioPageComponent implements OnInit {
         const s = b._sortStart.localeCompare(a._sortStart);
         return s !== 0 ? s : b._sortEnd.localeCompare(a._sortEnd);
       });
+  }
+
+  getCourseInitials(name: string): string {
+    return name
+      .split(/[\s-]+/)
+      .filter((w) => w.length > 0)
+      .slice(0, 2)
+      .map((w) => w[0].toUpperCase())
+      .join('');
+  }
+
+  getCourseColor(name: string): string {
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) {
+      hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const hue = ((hash % 360) + 360) % 360;
+    return `hsl(${hue}, 45%, 42%)`;
   }
 
   private formatDateRange(start: string, end?: string): string {

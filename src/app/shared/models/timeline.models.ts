@@ -4,9 +4,9 @@ export interface TimelineItemData {
   title: string;
   subtitle: string;
   dateRange: string;
+  initials?: string;
   details?: string;
   highlights?: (HighlightItem | string)[];
-  logoUrl?: string;
   _sortStart?: string;
   _sortEnd?: string;
 }

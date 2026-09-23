@@ -58,14 +58,11 @@
               <ul class="courses-list">
                 @for (course of resume.courses; track course.name) {
                   <li class="course">
-                    @if (course.logoUrl) {
-                      <img
-                        class="course-logo"
-                        [src]="course.logoUrl"
-                        [alt]="course.provider + ' logo'"
-                        loading="lazy"
-                      />
-                    }
+                    <span
+                      class="course-logo-initials"
+                      [style.background-color]="getCourseColor(course.provider)"
+                      [attr.aria-label]="course.provider"
+                    >{{ getCourseInitials(course.provider) }}</span>
                     <div>
                       <div class="course-name">{{ course.name }}</div>
                       <div class="course-provider">
